@@ -1,0 +1,17 @@
+.items
+  - @items.each do |item| 
+    .items--info
+      %p.name
+        【担当者】
+        = item.user.username
+      %p
+        【商品名】
+        = item.name
+      %p
+        【上代】
+        = item.price
+      %p
+        【下代】
+        = item.bugdet
+
+　　　

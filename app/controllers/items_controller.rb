@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
     before_action :authenticate_user!
   
     def index
+      @items = Item.includes(:user)
+
     end
   
     def new
@@ -10,16 +12,17 @@ class ItemsController < ApplicationController
   
     def create
       @item = Item.new(item_params)
+      @item.save
+        redirect_to action: :index
+
     end
   
-    def show
-      @item = Item.find(item_params)
-    end
 
     private
 
     def item_params
-    params.require(:item).permit(:name, :price, :budeget)
+      params.require(:item).permit(:name, :price, :bugdet).merge(user_id: current_user.id)
     end
+ 
+  end
 
-end

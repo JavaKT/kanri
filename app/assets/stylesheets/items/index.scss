@@ -1,0 +1,17 @@
+.items{
+  width: 100vw;
+  height: 100vh;
+  
+  display:flex;
+  &--info{
+    color:black;
+    height: 200px;
+    width: 400px;
+    font-size:20px;
+    p.name{
+      color:green;
+    }
+
+  }
+    
+}

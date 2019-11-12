@@ -5,9 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string  :name
       t.integer :price
       t.integer :bugdet
-      t.text    :comment
-      t.string  :color
-      t.date    :on_air
+      t.references :user, null: false ,foreign_key: true
       t.timestamps
       
     end
