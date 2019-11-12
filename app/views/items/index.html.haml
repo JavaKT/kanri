@@ -1,8 +1,8 @@
 .items
   - @items.each do |item| 
     .items--info
-      %p
-        = image_tag item.image.url,alt: "商品画像です"
+      %p.image
+        = image_tag item.image.url, alt: "商品画像です",size: "200×200"
       %p.name
         【担当者】
         = item.user.username
