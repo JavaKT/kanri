@@ -13,9 +13,13 @@
 ActiveRecord::Schema.define(version: 2019_11_11_114900) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.integer "bugdet"
+    t.string "image", null: false
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.integer "bugdet", null: false
+    t.text "color", null: false
+    t.datetime "on_air", default: -> { "CURRENT_TIMESTAMP" }
+    t.text "comment"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
