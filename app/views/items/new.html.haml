@@ -1,0 +1,12 @@
+.form
+  %h3 以下のフォームから登録して下さい
+  担当者：　current_user.username
+  .form__text
+    = form_with model: @item, local: true do |f|
+      商品名:
+      = f.text_field :name
+      上代：
+      = f.text_field :price
+      下代：
+      = f.text_field :budget
+      = f.submit value:"登録する"

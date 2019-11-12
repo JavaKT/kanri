@@ -1,0 +1,40 @@
+*{
+  box-sizing: border-box;
+}
+
+.body{
+  width: 100vw;
+  height: 100vh;
+  &__box{
+    width: 400px;
+    height: 300px;
+    margin:  0 auto;   
+    margin-top: 100px;
+    text-align: center;
+    line-height: 100px;
+   
+    &__regisration{
+      width:400px;
+      height: 100px;
+      background-color: blue;
+      border-radius: 10px;
+      cursor: pointer;
+      .box{
+        font-size:30px;
+      }
+    }
+    &__show{
+      width:400px;
+      height: 100px;
+      background-color: green;
+      border-radius: 10px;
+      margin-top: 50px;
+      cursor: pointer;
+      .box{
+        font-size:30px;
+      }
+    }
+
+  }
+
+}
