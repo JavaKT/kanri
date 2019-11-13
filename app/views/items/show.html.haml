@@ -22,3 +22,13 @@
   %p<
     【キャンコメなど】
     = @item.comment
+  - if user_signed_in? && current_user.id == @item.user_id
+    %p
+      = link_to edit_item_path(@item) do
+        編集する
+    %p
+      = link_to item_path(@item),method: :delete do
+        削除する
+    
+
+
