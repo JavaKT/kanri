@@ -17,7 +17,9 @@
 /storage/*
 !/storage/.keep
 /public/uploads/item/image
+/public/upload/item/video
 /public/uploads/tmp
+
 
 /node_modules
 /yarn-error.log

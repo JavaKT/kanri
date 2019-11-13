@@ -19,8 +19,11 @@
       %p
         キャンコメなど：
         = f.text_area :comment, rows: :"6",cols: :"50"
-      %p
+      %p 
         商品画像：
         = f.label "商品画像をアップロード"
         = f.file_field :image
+      %p
+        放映内容：
+        = f.file_field :video
       = f.submit value:"登録する" 

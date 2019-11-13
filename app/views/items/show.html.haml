@@ -22,6 +22,8 @@
   %p<
     【キャンコメなど】
     = @item.comment
+  %p
+    = video_tag @item.video_url.to_s, loop: true, controls: true, width: 550, id: "mv"
   - if user_signed_in? && current_user.id == @item.user_id
     %p
       = link_to edit_item_path(@item) do
