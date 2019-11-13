@@ -1,0 +1,24 @@
+.items--info
+  %p.image
+    = image_tag @item.image.thumb.url, alt: "商品画像です"
+  %p.name
+    【担当者】
+    = @item.user.username
+  %p
+    【商品名】
+    = @item.name
+  %p
+    【上代】
+    = @item.price
+  %p
+    【下代】
+    = @item.bugdet
+  %p
+    【取り扱い色】
+    = @item.color
+  %p
+    【放映日】
+    = @item.on_air.strftime("%Y年 %m月 %d日")
+  %p<
+    【キャンコメなど】
+    = @item.comment

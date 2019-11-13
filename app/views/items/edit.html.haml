@@ -1,0 +1,30 @@
+.form
+  %h3.text ↓以下のフォームから登録して下さい↓
+  担当者:
+  = current_user.username
+  .form__text
+    = form_with model: @item, local: true do |f|
+      .form__text__input
+        %p
+          商品名:
+          = f.text_field :name, size: :"35"
+        %p
+          上代：
+          = f.text_field :price, size: :"35"
+        %p
+          下代：
+          = f.text_field :bugdet, size: :"35"
+        %p
+          取扱色：
+          = f.text_field :color, size: :"25"
+        %p
+          放映日:
+          = f.date_select :on_air, size: :"35"
+        %p
+          キャンコメなど：
+          = f.text_area :comment, rows: :"6",cols: :"50"
+        %p
+          商品画像：
+          = f.label "商品画像をアップロード"
+          = f.file_field :image
+        = f.submit value:"登録する" 
