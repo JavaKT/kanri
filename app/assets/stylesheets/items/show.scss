@@ -1,0 +1,35 @@
+.show {
+  display:flex;
+  &__image{
+    height: 550px;  
+    width: 25%;
+    background-color: orange;
+    border: solid black;
+    .edit{
+      float:left;
+      margin-left:50px;
+    }
+    .delete {
+      float:right;
+      margin-right:50px;
+    }
+  }
+  &__text{
+    height: 550px;  
+    width: 25%;
+    border:solid black; 
+    .comment{
+      margin-left:5px; 
+    }
+  
+  }
+
+  &__video{
+    height: 550px;
+    width: 50%;
+    background-color: black;
+    color:white;
+    font-size:20px;
+
+  }
+}

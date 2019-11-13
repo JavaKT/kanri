@@ -1,36 +1,42 @@
-.items--info
-  %p.image
-    = image_tag @item.image.thumb.url, alt: "商品画像です"
-  %p.name
-    【担当者】
-    = @item.user.username
-  %p
-    【商品名】
-    = @item.name
-  %p
-    【上代】
-    = @item.price
-  %p
-    【下代】
-    = @item.bugdet
-  %p
-    【取り扱い色】
-    = @item.color
-  %p
-    【放映日】
-    = @item.on_air.strftime("%Y年 %m月 %d日")
-  %p<
-    【キャンコメなど】
-    = @item.comment
-  %p
-    = video_tag @item.video_url.to_s, loop: true, controls: true, width: 550, id: "mv"
-  - if user_signed_in? && current_user.id == @item.user_id
+
+.show
+  .show__image
+    %p.image
+      = image_tag @item.image.thumb.url, alt: "商品画像です"
+    %p.name
+      【担当者】
+      = @item.user.username
     %p
-      = link_to edit_item_path(@item) do
-        編集する
+      【商品名】
+      = @item.name
     %p
-      = link_to item_path(@item),method: :delete do
-        削除する
-    
+      【上代】
+      = @item.price
+    %p
+      【下代】
+      = @item.bugdet
+    %p
+      【取り扱い色】
+      = @item.color
+    %p
+      【放映日】
+      = @item.on_air.strftime("%Y年 %m月 %d日")
+    - if user_signed_in? && current_user.id == @item.user_id
+      %h4.edit
+        = link_to edit_item_path(@item) do
+          編集する
+      %h4.delete
+        = link_to item_path(@item),method: :delete do
+          削除する
+  .show__text
+    %p<
+      【キャンコメなど】
+      %h4.comment
+        = @item.comment
+  .show__video
+    【以下はプレビューになります　適宜確認して下さい】
+    %p
+      = video_tag @item.video_url.to_s, loop: true, controls: true, width: 650
+   
 
 
