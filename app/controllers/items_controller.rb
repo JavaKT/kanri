@@ -13,8 +13,8 @@ class ItemsController < ApplicationController
     def create
       @item = Item.new(item_params)
       @item.save
-        redirect_to action: :index
-
+      redirect_to action: :index
+       
     end
   
 
