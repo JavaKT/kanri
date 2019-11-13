@@ -11,7 +11,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.text :comment
       t.string :video
       t.references :user, null: false ,foreign_key: true
-      t.timestamps
+      t.references :genre, null:false ,foreign_key: true
+      t.timestamps 
       
     end
   end
