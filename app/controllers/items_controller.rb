@@ -9,14 +9,16 @@ class ItemsController < ApplicationController
   
     def new
       @item = Item.new
-      
 
     end
   
     def create
       @item = Item.new(item_params)
-      @item.save
+      if @item.save
       redirect_to action: :index
+      else  
+      redirect_to action: :new
+      end
     end
 
     def show
@@ -42,7 +44,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-      params.require(:item).permit(:name, :image, :price, :bugdet, :color, :on_air, :comment, :video).merge(user_id: current_user.id)
+      params.require(:item).permit(:name, :price, :bugdet, :color, :on_air, :comment, :video, :image).merge(user_id: current_user.id)
     end
  
     def set_item

@@ -10,25 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_071533) do
+ActiveRecord::Schema.define(version: 2019_11_13_091806) do
 
   create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
     t.string "name", null: false
-    t.integer "price", null: false
-    t.integer "bugdet", null: false
-    t.text "color", null: false
+    t.integer "price"
+    t.integer "bugdet"
+    t.text "color"
     t.datetime "on_air", default: -> { "CURRENT_TIMESTAMP" }
     t.text "comment"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "video"
+    t.string "image"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_071533) do
     t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "items", "users"
