@@ -1,20 +1,21 @@
 .items
-  - @items.each do |item| 
-    .items--info
-      %p.image
-        = image_tag item.image.thumb.url, alt: "商品画像です"
-      %p.name
-        【担当者】
-        = item.user.username
-      %p
-        【商品名】
-        = item.name
-      %p
-        【放映日】
-        = item.on_air.strftime("%Y年 %m月 %d日")
-      .items--info__show
-        = link_to item_path(item) do
-          詳細ページ
-
-
-　　　
+  = form_with url:'/items', method: :get, local: true do |f| 
+    = f.label :item_key, 'Search items' 
+    = f.text_field :item_key 
+    = f.submit 'Search' 
+    - @items.each do |item| 
+      .items--info
+        %p.image
+          = image_tag item.image.thumb.url, alt: "商品画像です"
+        %p.name
+          【担当者】
+          = item.user.username
+        %p
+          【商品名】
+          = item.name
+        %p
+          【放映日】
+          = item.on_air.strftime("%Y年 %m月 %d日")
+        .items--info__show
+          = link_to item_path(item) do
+            詳細ページ
