@@ -26,4 +26,7 @@
       %p
         放映内容：
         = f.file_field :video
-      = f.submit value:"登録する" 
+      %p
+        ジャンル選択:
+        = f.select :category_id, Category.all.map { |category| [category.genre, category.id] }
+        = f.submit value:"登録する" 
