@@ -17,7 +17,7 @@
 /storage/*
 !/storage/.keep
 /public/uploads/item/image
-/public/upload/item/video
+/public/uploads/item/video
 /public/uploads/tmp
 
 
