@@ -1,5 +1,5 @@
 .items
-  = form_with url:'/items', method: :get, local: true do |f| 
+  = form_with url:'/items/search', method: :get, local: true do |f| 
     = f.label :search, 'Search items' 
     = f.text_field :search 
     = f.submit 'Search' 
