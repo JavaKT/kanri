@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_item  ,except: [:index, :new, :create]
+    before_action :set_item  ,except: [:index, :new, :create, :search]
   
     def index
       @items = Item.includes(:user)
@@ -35,13 +35,13 @@ class ItemsController < ApplicationController
     end
 
     def destroy
-  
       @item.destroy
       redirect_to action: :index
     end
 
     def search
-      @items = Item.search(params[:search])
+      @items = Item.search(params[:keyword])
+
     end
 
 
