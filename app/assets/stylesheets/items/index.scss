@@ -1,20 +1,24 @@
 .items{
   width: 100vw;
   height: 100vh;
-  display:flex;
-  flex-wrap:wrap;
   margin-top:10px;
-  &--info{
-    color:black;
-    height: 380px;
-    width: 300px;
-    font-size:12px;
-    border: solid black;
-   
-    p.name{
-      color:green;
-    }
+    &__search{
+      display:flex;
+      flex-wrap:wrap;
+      input[type = "text"] {
+        width: 200px;
+        height: 30px;
+      }
 
+      &--info{
+        color:black;
+        height: 380px;
+        width: 300px;
+        font-size:12px;
+        border: solid black;
+        p.name{
+          color:green;
+      }
+    } 
   }
-    
 }

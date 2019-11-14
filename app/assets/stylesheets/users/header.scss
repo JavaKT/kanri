@@ -1,7 +1,14 @@
+
 .header{
   height: 100px;
-  width: 100vw;
+  width: 100%;
   background-color: orange;
+  &--edit{
+    text-decoration: none ;
+    color:black;
+    border: solid black;
+    background-color: #fff;
+  }
   &__button{
    height: 100px;
    float:right;
