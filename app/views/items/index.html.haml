@@ -1,7 +1,7 @@
 .items
   = form_with url:'/items', method: :get, local: true do |f| 
-    = f.label :item_key, 'Search items' 
-    = f.text_field :item_key 
+    = f.label :search, 'Search items' 
+    = f.text_field :search 
     = f.submit 'Search' 
     - @items.each do |item| 
       .items--info

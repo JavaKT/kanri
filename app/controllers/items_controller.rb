@@ -40,6 +40,10 @@ class ItemsController < ApplicationController
       redirect_to action: :index
     end
 
+    def search
+      @items = Item.search(params[:search])
+    end
+
 
     private
 
