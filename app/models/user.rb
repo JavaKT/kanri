@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true, length: {maximum: 10}
   has_many :items
+  has_many :categories
 end

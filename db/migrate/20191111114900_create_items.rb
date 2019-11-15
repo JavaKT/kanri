@@ -9,7 +9,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.datetime :on_air, default: -> { 'NOW()' }
       t.text :comment
       t.references :user, null: false ,foreign_key: true
-      t.references :category, foreign_key: true
       t.timestamps
       
     end

@@ -2,7 +2,8 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @items = Item.includes(:user)
+    category = Category.find(params[:id])
+    @items = category.items
   end
 end
 
