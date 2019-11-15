@@ -5,9 +5,15 @@
   .form__text
     = form_with model: @item, local: true do |f|
       %p.image
-        = image_tag @item.image.thumb.url, alt: "商品画像です"
+        - if @item.image.file.nil?
+          = image_tag "/uploads/noimage.png", width:"220",height: "220" 
+        - else
+          = image_tag @item.image.thumb.url, alt: "商品画像です"
       %p
-      = video_tag @item.video_url.to_s, loop: true, controls: true, width: 650 
+        - if @item.video.file.nil?
+          = image_tag "/uploads/novideo.jpg", width:"670",height: "350" 
+        - else
+          = video_tag @item.video_url.to_s, loop: true, controls: true, width: 650
       %p
         商品名:
         = f.text_field :name, size: :"35"
@@ -30,11 +36,10 @@
         商品画像：
         = f.label "商品画像をアップロード"
         = f.file_field :image
-      = f.submit value:"登録する"
       %p
         放映内容：
         = f.file_field :video
-      = f.submit value:"登録する" 
+
       %p
         ジャンル選択:
         = f.select :category_id, Category.all.map { |category| [category.genre, category.id] }

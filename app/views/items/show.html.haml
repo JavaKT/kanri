@@ -40,9 +40,11 @@
       %h4.comment
         = @item.comment
   .show__video
-    【以下はプレビューになります　適宜確認して下さい】
+    【以下はプレビューになります。適宜確認して下さい】
     %p
+    - if @item.video.file.nil?
+      = image_tag "/uploads/novideo.jpg", width:"670",height: "350" 
+    - else
       = video_tag @item.video_url.to_s, loop: true, controls: true, width: 650
    
-
 
