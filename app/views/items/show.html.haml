@@ -17,10 +17,10 @@
       = @item.name
     %p
       【上代】
-      = @item.price
+      = converting_to_jpy(@item.price) 
     %p
       【下代】
-      = @item.bugdet
+      = converting_to_jpy(@item.bugdet) 
     %p
       【取り扱い色】
       = @item.color
