@@ -1,18 +1,28 @@
 $( function() {
 
 
-  $(".body__box__regisration").on("mouseover",function(){
+  $(".body").on("mouseover",".body__box__regisration",function(){
   $(this).css
   ({"background-color": "#F1940B",
-    "font-weight": "bold"
-   });
+    "font-weight": "bold"});
   })
 
-.on("mouseout", function(){
+.on("mouseout",".body__box__regisration", function(){
   $(this).css({
-    "background-color": "blue", 
+    "background-color": "", 
     "font-weight": "normal"});
   })
+  .on("mouseover",".body__box__show",function(){
+    $(this).css
+    ({"background-color": "#F1940B",
+      "font-weight": "bold"});
+    })
+  
+  .on("mouseout",".body__box__show", function(){
+    $(this).css({ 
+      "background-color": "",
+      "font-weight": "normal"});
+    })
 
 
 })

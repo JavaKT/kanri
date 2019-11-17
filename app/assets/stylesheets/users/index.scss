@@ -1,36 +1,44 @@
 
 .body{
+  padding-top:100px;
+  box-sizing: border-box;
   width: 100vw;
   height: 100vh;
+  background-image: url("bgcimage.jpg");
+  background-repeat: repeat-y;
+  position: relative;
   &__box{
     width: 400px;
     height: 300px;
-    margin:  0 auto;   
-    margin-top: 100px;
     text-align: center;
     line-height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
     
    
     &__regisration{
       width:400px;
       height: 100px;
-      background-color: blue;
       border-radius: 10px;
       cursor: pointer;
       border:solid black;
+      
        &--text{
         font-size:30px;
         color:black;
         text-decoration: none;
         .box{
-          line-height: 30px;
+          line-height: 100px;
         }
       }
     }
     &__show{
       width:400px;
       height: 100px;
-      background-color: green;
       border-radius: 10px;
       margin-top: 50px;
       cursor: pointer;
@@ -40,7 +48,7 @@
         color:black;
         text-decoration: none;
         .box{
-          line-height: 30px;
+          line-height: 100px;
         }
       }
     }
