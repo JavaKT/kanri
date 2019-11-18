@@ -1,4 +1,5 @@
-$( function() {
+$(document).ready (function() {
+
 
 
   $(".body").on("mouseover",".body__box__regisration",function(){
@@ -23,6 +24,4 @@ $( function() {
       "background-color": "",
       "font-weight": "normal"});
     })
-
-
-})
+});
