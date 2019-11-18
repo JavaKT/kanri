@@ -3,27 +3,29 @@ $(document).on('turbolinks:load',function() {
   function appendItem(data){
     var html = `<div class="items__search__result__info">
                   <div class="items__search__result__info__image">
-                    <p class="image">
-                    <img src = ${data.image.thumb.url}>
-                    </p>
+                  <p class="image">
+                  <image src = "${data.image.thumb.url}" onerror = "this.src = '/uploads/noimage.png'", width="200" height="200">
+                  </p>
                   </div>
                   <div class="items__search__result__info__text">
                     <p class="name">【担当者】${data.username}</p>
                     <p>【商品名】${data.name}</p>
                     <p>【放映日】${data.on_air}</p>
-                  <div class="items--info__result__show">
-                    <a href="/items/${data.id}">詳細ページ
+                    <a class="show" href="/items/${data.id}"><i class="fa fa-info-circle icon"></i>
+                    </a>
+                    <a href="/items/${data.id}">
                     </a></div>
                   </div>
                 </div>`
     $(".items__search__result").append(html)
+
   }
 
   function NoResult(message){
     var html = `
               <li>${message}</li>`
 
-    $(".imtems__search__result").append(html)
+    $(".items__search__result").append(html)
   }
 
 
@@ -35,7 +37,7 @@ $(document).on('turbolinks:load',function() {
       type: 'GET',
       url: 'items/search',
       data: {keyword: target},
-      dataType: 'json'
+      dataType: 'json',
     })
     .done(function(items) {
       $(".items__search__result").empty();
@@ -52,3 +54,4 @@ $(document).on('turbolinks:load',function() {
       })
     })
   })
+
