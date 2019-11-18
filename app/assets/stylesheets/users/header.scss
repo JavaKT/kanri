@@ -38,15 +38,29 @@ $none :none;
   }
   &__button{
    height: 100px;
-   width: 200px;
+   width: 210px;
    float:right;
-   margin-right:10px;
+   margin-right:15px;
+
     &__create{
+      
       &--show{
         text-decoration: $none;
         color:black;
+        font-weight:bold;
+        border:solid greenyellow;
         background-color: #fff;
-        border:solid black; 
+        padding:5px;
+      }
+
+      &--new{
+        margin-left:10px;
+        text-decoration: $none;
+        color:black;
+        font-weight:bold; 
+        border:solid greenyellow;
+        background-color: #fff;
+        padding:5px;
       }
     }
     &__show{
