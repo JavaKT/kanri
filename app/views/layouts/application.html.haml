@@ -23,14 +23,16 @@
         = link_to "サインイン", new_user_registration_path 
         = link_to "ログイン", new_user_session_path 
     .header__button
-      =link_to items_path ,class:"header__button--show" do
-        商品一覧へ
-      =link_to new_item_path ,class:"header__button--show" do
-        商品登録へ
-      =link_to "/categories/1",class:"header__button--biyou" do
-        美容商品一覧へ
-      =link_to "/categories/2",class:"header__button--fashion" do
-        ファッション商品一覧へ
-      =link_to "/categories/3",class:"header__button--living" do
-        リビング商品一覧へ
+      .header__button__create
+        =link_to items_path ,class:"header__button__create--show" do
+          商品一覧へ
+        =link_to new_item_path ,class:"header__button__create--show" do
+          商品登録へ
+      .header__button__show
+        =link_to "/categories/1",class:"header__button__show--biyou" do
+          = icon "fa","female"
+        =link_to "/categories/2",class:"header__button__show--fashion" do
+          = icon "fa","tshirt"
+        =link_to "/categories/3",class:"header__button__show--living" do
+          = icon "fab","resolving"
   = yield
