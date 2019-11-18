@@ -2,14 +2,16 @@
   background-color:#33FF99;
 
     &__search{
-      display:flex;
-      flex-wrap:wrap;
       margin-left:10px;
       padding-top:10px;
       input[type = "text"] {
         width: 200px;
         height: 30px;
       }
+      &__result{
+        flex-wrap:wrap;
+        display:flex;
+      
 
       &__info{
         margin-top:10px;
@@ -29,6 +31,7 @@
         p.name{
           color:green;
         }
+      }
       }
     }
   } 

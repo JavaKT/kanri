@@ -1,6 +1,4 @@
-$(document).ready (function() {
-
-
+$(document).on('turbolinks:load',function() {
 
   $(".body").on("mouseover",".body__box__regisration",function(){
   $(this).css
