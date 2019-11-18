@@ -3,16 +3,32 @@
   &__image{
     height: 550px;  
     width: 25%;
-    background-color: #33FF99;
+    background-color: #33ff99;
     border: solid black;
-    .edit{
-      float:left;
-      margin-left:50px;
+    .image{
+      padding:10px;
     }
-    .delete {
-      float:right;
-      margin-right:50px;
+    &__box{
+      margin-top:20px;
+
     }
+    &__edit{
+      margin-top:20px;
+      padding:10px;
+      .edi{
+        float:left;
+        text-decoration: none;
+        margin-left: 50px;
+        color:black;
+        font-size:30px;
+      }
+      .delete {
+        float:left;
+        margin-left:120px;
+        color:red;
+        font-size:30px;
+        }
+      }
   }
   &__text{
     height: 550px;  
