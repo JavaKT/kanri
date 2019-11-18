@@ -1,0 +1,52 @@
+.edit{
+  margin-left:100px;
+  margin-top:10px;
+  padding:10px;
+
+  .text{
+    color:red;
+  }
+
+  &__box{
+    display:flex;
+
+  &__image{
+    height: 550px;
+    width: 550px;
+    border: double black;
+
+  }
+
+  &__text{
+    border: double black;
+    height: 400px;
+    width: 550px;
+    font-size:20px;
+    margin-left: 100px;
+    padding-left:10px;
+    .image{
+      width:max-content;
+      margin-top:5px;
+    }
+    .video{
+      width:max-content;
+      margin-top:5px;
+    }
+    &__submit{
+      display:flex;
+   
+    .register{
+      font-size: 20px;
+      width: 150px;
+      height:50px;
+      border-radius: 10px;
+      border:solid #33FF99;
+      margin:65px 50px;
+      cursor: pointer;
+
+     }  
+    }
+  }
+  }
+}
+

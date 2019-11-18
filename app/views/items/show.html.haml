@@ -6,6 +6,7 @@
         = image_tag "/uploads/noimage.png", width:"220",height: "220" 
       - else
         = image_tag @item.image.thumb.url, alt: "商品画像です"
+      
     %p.name
       【担当者】
       = @item.user.username
