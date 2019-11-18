@@ -30,8 +30,18 @@
           margin-top: 10px;
         p.name{
           color:green;
+          }
         }
-      }
+        .show{
+          text-decoration: none;
+          .icon{
+            color: black;
+            margin-left:220px;
+     
+            margin-bottom:10px;
+            font-size:20px;
+          }
+        }
       }
     }
   } 

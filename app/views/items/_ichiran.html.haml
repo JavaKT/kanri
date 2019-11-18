@@ -20,6 +20,5 @@
           %p
             【放映日】
             = item.on_air.strftime("%Y年 %m月 %d日")
-      .items--info__result__show
-        = link_to item_path(item) do
-          詳細ページ
+          = link_to item_path(item) ,class:"show" do
+            = icon "fa","info-circle",class:"icon"
