@@ -9,24 +9,28 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
   .header
-    %h
-    - if user_signed_in? 
-      担当者名：
-      = current_user.username
-      = link_to "プロフィール変更", edit_user_registration_path, class:"header--edit"
-      = link_to "ログアウト", destroy_user_session_path ,method: :delete, class:"header--edit"
-    - else 
-      = link_to "サインイン", new_user_registration_path 
-      = link_to "ログイン", new_user_session_path 
+    .header__user
+      %h
+      - if user_signed_in?
+        %h1.user 担当者名:
+        %h1.name 
+          = current_user.username
+        = link_to edit_user_registration_path, class:"none" do
+          = icon "fa","user-edit",class:"edit"
+        = link_to destroy_user_session_path,method: :delete do
+          = icon 'fa', "sign-out-alt" ,class:"logout"
+      - else 
+        = link_to "サインイン", new_user_registration_path 
+        = link_to "ログイン", new_user_session_path 
     .header__button
-      =link_to items_path do
-        %p 商品一覧へ
-      =link_to new_item_path do
-        %p 商品登録へ
-      =link_to "/categories/1"do
+      =link_to items_path ,class:"header__button--show" do
+        商品一覧へ
+      =link_to new_item_path ,class:"header__button--show" do
+        商品登録へ
+      =link_to "/categories/1",class:"header__button--biyou" do
         美容商品一覧へ
-      =link_to "/categories/2"do
+      =link_to "/categories/2",class:"header__button--fashion" do
         ファッション商品一覧へ
-      =link_to "/categories/3"do
+      =link_to "/categories/3",class:"header__button--living" do
         リビング商品一覧へ
   = yield

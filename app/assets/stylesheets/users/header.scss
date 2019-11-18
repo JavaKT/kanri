@@ -1,17 +1,62 @@
 
+$none :none;
+
 .header{
   height: 100px;
   width: 100%;
   padding-top:10px;
   background-color:#696969;
-  &--edit{
-    text-decoration: none ;
-    color:black;
-    border: solid black;
-    background-color: #fff;
+  &__user{
+    height: 100px;
+    width: 200px;
+    float:left;
+    font-size:20px;
+    text-decoration: $none;
+  
+  .user {
+    margin-left:5px;
+    float:left;
+  }
+  .name{
+    float:left;
+    margin-left:5px;
+  }
+  .none{
+    text-decoration: $none;
+    .edit{
+      color:white;
+      font-size:20px;
+      margin-left:10px;
+    }
+  }
+  .logout{
+    color:orange;
+    font-size:20px;
+    margin-left:5px;
+
+    }
   }
   &__button{
    height: 100px;
+   width: 200px;
    float:right;
+   margin-right:10px;
+    &--show{
+      text-decoration: $none;
+      color:black;
+      background-color: #fff;
+      border:solid black; 
+    }
+    &--biyou{
+      text-decoration: $none;
+      display:block;
+    }
+    &--fashion{
+      text-decoration: $none;
+    }
+    &--living{
+      text-decoration: $none;
+      display:block;
+    }
   }
 }
