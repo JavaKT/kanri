@@ -2,21 +2,23 @@
   = f.text_field :keyword ,placeholder:"商品名を入力して下さい"
   = f.submit '検索する'
   - items.each do |item| 
-    .items__search--info
-      %p.image
-        - if item.image.file.nil?
-          = image_tag "/uploads/noimage.png", width:"220",height: "220" 
-        - else
-          = image_tag item.image.thumb.url, alt: "商品画像です"
-      %p.name
-        【担当者】
-        = item.user.username
-      %p
-        【商品名】
-        = item.name
-      %p
-        【放映日】
-        = item.on_air.strftime("%Y年 %m月 %d日")
-      .items--info__show
-        = link_to item_path(item) do
-          詳細ページ
+    .items__search__info
+      .items__search__info__image
+        %p.image
+          - if item.image.file.nil?
+            = image_tag "/uploads/noimage.png", width:"200",height: "200" 
+          - else
+            = image_tag item.image.thumb.url, alt: "商品画像です"
+      .items__search__info__text
+        %p.name
+          【担当者】
+          = item.user.username
+        %p
+          【商品名】
+          = item.name
+        %p
+          【放映日】
+          = item.on_air.strftime("%Y年 %m月 %d日")
+        .items--info__show
+          = link_to item_path(item) do
+            詳細ページ
