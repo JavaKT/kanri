@@ -24,7 +24,6 @@ $(document).on('turbolinks:load',function() {
   function NoResult(message){
     var html = `
               <li>${message}</li>`
-
     $(".items__search__result").append(html)
   }
 
