@@ -13,24 +13,24 @@
 ActiveRecord::Schema.define(version: 2019_11_18_065250) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "genre"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "price"
-    t.integer "bugdet"
-    t.text "color"
-    t.datetime "on_air", default: -> { "CURRENT_TIMESTAMP" }
-    t.text "comment"
     t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name", null: false
     t.string "video"
     t.string "image"
-    t.integer "category_id"
+    t.integer "price", null: false
+    t.integer "bugdet", null: false
+    t.text "color", null: false
+    t.datetime "on_air", default: -> { "CURRENT_TIMESTAMP" }
+    t.text "description"
+    t.integer "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["name"], name: "index_items_on_name", length: 20
     t.index ["user_id"], name: "index_items_on_user_id"
   end
