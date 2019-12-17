@@ -12,12 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_11_18_065250) do
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name", null: false
@@ -26,9 +20,9 @@ ActiveRecord::Schema.define(version: 2019_11_18_065250) do
     t.integer "price", null: false
     t.integer "bugdet", null: false
     t.text "color", null: false
-    t.datetime "on_air", default: -> { "CURRENT_TIMESTAMP" }
+    t.datetime "on_air", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.text "description"
-    t.integer "category_id", null: false
+    t.integer "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_items_on_name", length: 20
@@ -43,10 +37,10 @@ ActiveRecord::Schema.define(version: 2019_11_18_065250) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username"
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["nickname"], name: "index_users_on_nickname", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "items", "users"

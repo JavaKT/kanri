@@ -9,9 +9,9 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :price, null: false
       t.integer :bugdet, null: false
       t.text :color, null: false
-      t.datetime :on_air, default: -> { 'NOW()' }
+      t.datetime :on_air, default: -> { 'NOW()' },null: false
       t.text :description
-      t.integer :category_id, null: false
+      t.integer :category, null: false
       t.timestamps
       
     end
