@@ -8,7 +8,7 @@ $(document).on('turbolinks:load',function() {
                   </p>
                   </div>
                   <div class="items__search__result__info__text">
-                    <p class="name">【担当者】${data.username}</p>
+                    <p class="name">【担当者】${data.nickname}</p>
                     <p>【商品名】${data.name}</p>
                     <p>【放映日】${data.on_air}</p>
                     <a class="show" href="/items/${data.id}"><i class="fa fa-info-circle icon"></i>
