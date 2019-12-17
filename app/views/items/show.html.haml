@@ -12,7 +12,7 @@
       = @item.user.username
     %p
       【ジャンル】
-      = @item.category.genre
+      = @item.category.name
     %p
       【商品名】
       = @item.name
@@ -40,7 +40,7 @@
     %p<
       【キャンコメなど】
       %h4.comment
-        = @item.comment
+        = @item.description
   .show__video
     【以下はプレビューになります。適宜確認して下さい】
     %p
