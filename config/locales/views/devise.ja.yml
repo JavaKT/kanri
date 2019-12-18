@@ -40,9 +40,9 @@ ja:
       invalid: "不正な値です"
       last_attempt: もう一回誤るとアカウントがロックされます。
       locked: アカウントは凍結されています。
-      not_found_in_database: "%{authentication_keys}またはパスワードが違います。"
+      not_found_in_database: "登録情報と違います"
       timeout: セッションがタイムアウトしました。もう一度ログインしてください。
-      unauthenticated: ←入力してログインしてください。
+      unauthenticated: ""
       unconfirmed: メールアドレスの本人確認が必要です。
     mailer:
       confirmation_instructions:
