@@ -16,6 +16,6 @@ class User < ApplicationRecord
   has_many :items
 
   validates :username, presence: true,format: {with: /\A[ぁ-んァ-ン一-龥]/}
-  validates :department,presence: {message:"選択して下さい"}
+  validates :department,presence: {message:"を選択して下さい"}
 
 end

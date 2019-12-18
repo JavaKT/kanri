@@ -4,10 +4,12 @@
     = f.label "お名前"
     %br/
     = f.text_field :username, autofocus: true
+    = render partial: 'shared/error_messages', locals: {user: @user, column: "username"}
   .field
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
+    = render partial: 'shared/error_messages', locals: {user: @user, column: "email"}
   .field
     = f.label :password
     - if @minimum_password_length
@@ -15,14 +17,17 @@
         (#{@minimum_password_length}文字以上で入力して下さい)
     %br/
     = f.password_field :password, autocomplete: "new-password"
+    = render partial: 'shared/error_messages', locals: {user: @user, column: "password"}
   .field
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
+    = render partial: 'shared/error_messages', locals: {user: @user, column: "password_confirmation"}
   .field
   = f.label "所属部署"
   %br/
   = f.select :department, User.departments.keys, {prompt: "---"}
+  = render partial: 'shared/error_messages', locals: {user: @user, column: "department"}
   .field
   = f.label "役職"
   %br/
