@@ -20,7 +20,7 @@
         = link_to destroy_user_session_path,method: :delete do
           = icon 'fa', "sign-out-alt" ,class:"logout"
       - else 
-        = link_to "サインイン", new_user_registration_path 
+        = link_to "新規登録", new_user_registration_path 
         = link_to "ログイン", new_user_session_path 
     .header__button
       .header__button__create
