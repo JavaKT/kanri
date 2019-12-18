@@ -10,7 +10,8 @@ class User < ApplicationRecord
              "テレビ部":4,
              "ロジスティック部":5,
              "ハートコール部":6,
-             "美容健康部":7,
+             "EC部":7
+             "美容健康部":8,
             }
 
   has_many :items
