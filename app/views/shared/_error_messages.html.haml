@@ -1,6 +1,6 @@
 - if user.errors.any?
   - if errors = user.errors.full_messages_for(column)
-    %ul
+    %ul.error_message
       - errors.each do |error|
         %li.error_message
-          =error
+          = error
