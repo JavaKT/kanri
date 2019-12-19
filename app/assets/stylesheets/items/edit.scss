@@ -1,7 +1,10 @@
-.edit{
+* {
+  box-sizing: border-box;
+}
+.edit_item{
   margin-left:100px;
-  margin-top:10px;
-  padding:10px;
+  padding-top:100px;
+
 
   .text{
     color:red;

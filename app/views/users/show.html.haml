@@ -1,10 +1,11 @@
-.box
-  .box__sidebar
-    .box__sidebar__image
+.show_user
+  .show_user__sidebar
+    .show_user__sidebar__image
       = image_tag @user.image.url,size: '300x300',class:"profimage"
-    .box__sidebar__info
+    .show_user__sidebar__info
       %p.username
         = @user.username
+        
       %table 
         %tr
           %td 所属部署:
@@ -19,17 +20,17 @@
           %td.value
             = @user.contact
         %tr
-        %td 内線番号:
-        %td.value
-          8558
+          %td 内線番号:
+          %td.value
+            = @user.number
+        %tr
+          %td 入社日:
+          %td.value
+            = @user.start_day.strftime("%Y年 %m月 %d日")
 
-      .box__sidebar__info__text
+      .show_user__sidebar__info__text
         %p.self 自己紹介
         %p.info
           = @user.introduction
-    - if user_signed_in? && current_user.id == @user.id
-      %h4
-        = link_to edit_regisration_path(current_user) do
-          =  icon "fa","edit",class:"edi"
-  .box__main
+  .show_user__main
     = render partial:"items/ichiran", locals:{items:@items}

@@ -1,10 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 .form{
   height: 550px;
   width: 550px;
   margin-left:100px;
-  margin-top:10px;
-  border: double black;
-  padding:10px;
+  padding-top:100px;
 
   .text{
     color:red;

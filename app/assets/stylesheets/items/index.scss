@@ -1,6 +1,11 @@
+* {
+  box-sizing: border-box;
+}
 .items{
   background-color:#33FF99;
-
+  padding-top:100px;
+  width:100vw;
+  height:100vh;
     &__search{
       margin-left:10px;
       padding-top:10px;
@@ -30,16 +35,6 @@
           margin-top: 10px;
         p.name{
           color:green;
-          }
-        }
-        .show{
-          text-decoration: none;
-          .icon{
-            color: black;
-            margin-left:220px;
-     
-            margin-bottom:10px;
-            font-size:20px;
           }
         }
       }

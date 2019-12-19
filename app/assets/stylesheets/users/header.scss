@@ -5,7 +5,9 @@ $none :none;
   height: 100px;
   width: 100%;
   padding-top:10px;
-  background-color:#696969;
+  border-bottom: solid 1px #eee;
+  background-color:#C0C0C0;
+  position:fixed;
   &__user{
     height: 100px;
     width: 200px;

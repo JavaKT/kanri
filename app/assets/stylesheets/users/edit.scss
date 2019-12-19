@@ -8,11 +8,15 @@
 
 //================================= SIGNUP VIEW=================================//
 
+* {
+  box-sizing: border-box;
+}
 
 .signin{
   background-color:#99FF99;
   height: 100vh;
   width:100vw;
+  padding-top:100px;
   &__text{
   text-align:  center;
   font-size:25px;
@@ -46,6 +50,12 @@
         }
         #user_contact{
           @include text_field();
+        }
+        #user_start_day{
+          @include text_field();
+        }
+        #user_image{
+          font-size: 15px;
         }
       }
       .actions{

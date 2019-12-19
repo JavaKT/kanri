@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_065250) do
     t.string "contact"
     t.string "post"
     t.integer "number"
+    t.datetime "start_day"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

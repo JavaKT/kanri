@@ -35,6 +35,10 @@
         %br/
         = f.text_field :post,placeholder: "MD,販売推進,営業など"
       .field
+        = f.label "入社日"
+        %br/
+        = f.date_field :start_day
+      .field
         = f.label "プロフィール画像"
         %br/
         = f.file_field :image
