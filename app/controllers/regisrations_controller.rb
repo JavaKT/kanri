@@ -24,10 +24,28 @@ class RegisrationsController < ApplicationController
   end
 
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(edit_params)
+    if @user.update_attributes(edit_params)
+      redirect_to user_path(current_user)
+    else
+      render :edit
+    end
+  end
+
 
   private
   def user_params
-  params.require(:user).permit(:email,:password,:password_confirmation,
-                                :username,:department,:image,:introduciton,:contact,:post)
+  params.require(:user).permit(:email,:password,:password_confirmation,:start_day,
+                                :username,:department,:image,:introduction,:contact,:post,:number)
+  end
+
+  def edit_params
+  params.require(:user).permit(:username,:start_day,:department,:image,:introduction,:contact,:post,:number)
   end
 end

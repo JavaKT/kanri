@@ -5,20 +5,20 @@
     - items.each do |item| 
       .items__search__result__info
         .items__search__result__info__image
-          %p.image
-            - if item.image.file.nil?
-              = image_tag "/uploads/noimage.png", width:"200",height: "200" 
-            - else
-              = image_tag item.image.thumb.url, alt: "商品画像です"
+          = link_to item_path(item) do
+            %p.image
+              - if item.image.file.nil?
+                = image_tag "/uploads/noimage.png", width:"200",height: "200" 
+              - else
+                = image_tag item.image.thumb.url, alt: "商品画像です"
         .items__search__result__info__text
           %p.name
             【担当者】
-            = item.user.nickname
+            = item.user.username
           %p
             【商品名】
             = item.name
           %p
             【放映日】
             = item.on_air.strftime("%Y年 %m月 %d日")
-          = link_to item_path(item) ,class:"show" do
-            = icon "fa","info-circle",class:"icon"
+         

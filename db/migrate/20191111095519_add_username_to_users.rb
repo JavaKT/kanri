@@ -6,5 +6,7 @@ class AddUsernameToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :introduction, :text
     add_column :users, :contact, :string
     add_column :users, :post, :string
+    add_column :users, :number, :integer
+    add_column :users, :start_day, :datetime
   end
 end

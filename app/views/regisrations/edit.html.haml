@@ -1,0 +1,44 @@
+.signin
+  .signin__text
+    %h1 プロフィール編集画面
+    = form_for @user, url: regisration_path, method: :patch do |f|
+      .field
+        = f.label "*お名前"
+        %br
+        = f.text_field :username, placeholder: "お名前を入力して下さい"
+        = render partial: 'shared/error_messages', locals: {user: @user, column: "username"}
+      .field
+        = f.label "*所属部署"
+        %br/
+        = f.select :department, User.departments.keys, {prompt: "---"}
+        = render partial: 'shared/error_messages', locals: {user: @user, column: "department"}
+      .field
+        = f.label "役職"
+        %br/
+        = f.text_field :post,placeholder: "MD,販売推進,営業など"
+      .field
+        = f.label "入社日"
+        %br/
+        = f.date_field :start_day, size: :"50"
+      .field
+        = f.label "プロフィール画像"
+        %br/
+        = f.file_field :image
+      .field
+        = f.label "内線番号"
+        %br/
+        = f.text_field :number
+      .field
+        = f.label "連絡先"
+        %br/
+        = f.text_field :contact,placeholder: "公開してもいい連絡先を入力して下さい"
+      .field
+        = f.label "自己紹介"
+        %br/
+        = f.text_area :introduction, rows:"6",cols: :"50",placeholder: "自由記入欄です"
+      .actions
+        = f.submit "編集を完了する",class:"singup_button"
+
+
+
+

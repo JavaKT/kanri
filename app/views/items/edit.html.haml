@@ -1,9 +1,9 @@
-.edit
+.edit_item
   %h3.text 右のフォームから編集して下さい　→
   担当者:
-  = current_user.nickname
-  .edit__box
-    .edit__box__image
+  = current_user.username
+  .edit_item__box
+    .edit_item__box__image
       %p.image
         - if @item.image.file.nil?
           = image_tag "/uploads/noimage.png", width:"220",height: "220" 
@@ -14,7 +14,7 @@
           = image_tag "/uploads/novideo.jpg", width:"500",height: "300" 
         - else
           = video_tag @item.video_url.to_s, loop: true, controls: true, width: 650
-    .edit__box__text
+    .edit_item__box__text
       = form_with model: @item, local: true do |f|
         %p
           商品名:
@@ -40,8 +40,8 @@
           = f.file_field :video
         %p
           ジャンル選択:
-          = f.select :category_id, Category.all.map { |category| [category.genre, category.id] }
-        .edit__box__text__submit
+          = f.select :category, Item.categories.keys, {prompt: "---"}
+        .edit_item__box__text__submit
           %p
             キャンコメなど：
             = f.text_area :comment, rows: :"6",cols: :"50"

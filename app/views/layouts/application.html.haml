@@ -9,19 +9,19 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
   .header
-    .header__user
-      %h
-      - if user_signed_in?
-        %h1.user 担当者名:
-        %h1.name 
+    - if user_signed_in?
+      .header__user
+        .header__user__name
+          %h1.user 担当者名:
+        %h2.name 
           = current_user.username
-        = link_to edit_user_registration_path, class:"none" do
-          = icon "fa","user-edit",class:"edit"
-        = link_to destroy_user_session_path,method: :delete do
-          = icon 'fa', "sign-out-alt" ,class:"logout"
-      - else 
-        = link_to "新規登録", new_regisration_path 
-        = link_to "ログイン", new_user_session_path 
+        .header__user__image
+          = link_to  user_path(current_user) ,class:"none" do
+            = image_tag current_user.image.url,class:"userimage"
+          = link_to edit_user_registration_path, class:"none" do
+            = icon "fa","user-edit",class:"edit"
+          = link_to destroy_user_session_path,class:"none",method: :delete do
+            = icon 'fa', "sign-out-alt" ,class:"logout"
     .header__button
       .header__button__create
         =link_to items_path ,class:"header__button__create--show" do
