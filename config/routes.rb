@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  root to: "users#index"
+  root to: "regisrations#index"
   
-  resources :users
+  resources :regisrations, only: [:index,:new,:create]
   resources :categories ,only: [:show]
   resources :items do
       collection do

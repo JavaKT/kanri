@@ -1,0 +1,48 @@
+//================================= STYLE&COLOR =================================//
+
+@mixin text_field($height: 25px, $width: 300px, $radius:4px, $fSize:15px) {
+  height: $height;
+  width:$width;
+  border-radius: $radius;
+  font-size: $fSize;
+}
+//================================= LOGIN VIEW =================================//
+
+.login{
+  background-color:#99FF99;
+  height: 100vh;
+  width:100vw;
+  &__text{
+  text-align:  center;
+  font-size:25px;
+    #new_user{
+      border:solid 2px;
+      height: 100%;
+      width:600px;
+      margin: 0 auto;
+      .field{
+        font-size:20px;
+        #user_email{
+          @include text_field();
+        }
+        #user_password{
+          @include text_field();
+        }
+      }
+      .actions{
+        .login_button{
+          width:200px;
+          font-size: 0.7em;
+          background-color:#009900;
+          margin-bottom:5px;
+          border-radius: 20px;
+        }
+      }
+    }
+    .links{
+      margin-top:10px;
+      font-size:20px;
+      text-decoration: none;
+    }
+  }
+}
