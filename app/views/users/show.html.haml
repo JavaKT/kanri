@@ -1,0 +1,30 @@
+.box
+  .box__sidebar
+    .box__sidebar__image
+      = image_tag @user.image.url,size: '300x300',class:"profimage"
+    .box__sidebar__info
+      %p.username
+        = @user.username
+      %table 
+        %tr
+          %td 所属部署:
+          %td.value
+            =@user.department
+        %tr
+          %td 役職:
+          %td.value
+            =@user.post
+        %tr
+          %td 連絡先:
+          %td.value
+            = @user.contact
+        %tr
+        %td 内線番号:
+        %td.value
+          8558
+
+      .box__sidebar__info__text
+        %p.self 自己紹介
+        %p.info
+          = @user.introduction
+  .box__main

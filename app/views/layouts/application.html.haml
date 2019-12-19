@@ -13,8 +13,10 @@
       %h
       - if user_signed_in?
         %h1.user 担当者名:
-        %h1.name 
-          = current_user.username
+        = link_to  user_path(current_user.id) do
+          %h1.name 
+            = current_user.username
+
         = link_to edit_user_registration_path, class:"none" do
           = icon "fa","user-edit",class:"edit"
         = link_to destroy_user_session_path,method: :delete do
