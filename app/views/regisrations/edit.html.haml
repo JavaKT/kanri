@@ -21,6 +21,10 @@
         %br/
         = f.file_field :image
       .field
+        = f.label "内線番号"
+        %br/
+        = f.text_field :number
+      .field
         = f.label "連絡先"
         %br/
         = f.text_field :contact,placeholder: "公開してもいい連絡先を入力して下さい"

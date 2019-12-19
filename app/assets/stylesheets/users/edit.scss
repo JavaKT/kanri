@@ -32,20 +32,14 @@
         #user_username{
           @include text_field();
         }
-        #user_email{
-          @include text_field();
 
-        }
-        #user_password{
-          @include text_field();
-        }
-        #user_password_confirmation{
-          @include text_field();
-        }
         #user_department{
           height: 25px;
           width:300px;
           font-size: 15px;
+        }
+        #user_number{
+          @include text_field();
         }
         #user_post{
           @include text_field();

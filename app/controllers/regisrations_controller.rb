@@ -42,10 +42,10 @@ class RegisrationsController < ApplicationController
   private
   def user_params
   params.require(:user).permit(:email,:password,:password_confirmation,
-                                :username,:department,:image,:introduciton,:contact,:post)
+                                :username,:department,:image,:introduction,:contact,:post,:number)
   end
 
   def edit_params
-  params.require(:user).permit(:username,:department,:image,:introduciton,:contact,:post)
+  params.require(:user).permit(:username,:department,:image,:introduction,:contact,:post,:number)
   end
 end

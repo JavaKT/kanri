@@ -50,6 +50,9 @@
         #user_post{
           @include text_field();
         }
+        #user_number{
+          @include text_field();
+        }
         #user_contact{
           @include text_field();
         }
