@@ -27,5 +27,9 @@
         %p.self 自己紹介
         %p.info
           = @user.introduction
+    - if user_signed_in? && current_user.id == @user.id
+      %h4
+        = link_to edit_regisration_path(current_user) do
+          =  icon "fa","edit",class:"edi"
   .box__main
     = render partial:"items/ichiran", locals:{items:@items}

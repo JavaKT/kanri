@@ -1,0 +1,79 @@
+//================================= STYLE&COLOR=================================//
+@mixin text_field($height: 25px, $width: 300px, $radius:4px, $fSize:15px) {
+  height: $height;
+  width:$width;
+  border-radius: $radius;
+  font-size: $fSize;
+}
+
+//================================= SIGNUP VIEW=================================//
+
+
+.signin{
+  background-color:#99FF99;
+  height: 100vh;
+  width:100vw;
+  &__text{
+  text-align:  center;
+  font-size:25px;
+  background-color:#99FF99;
+  padding-bottom: 50px;
+    .edit_user{
+      background-color: #fff;
+      border:solid 2px;
+      height: 100%;
+      width: 500px;
+      margin: 0 auto;
+      padding-left:20px;
+      padding-bottom: 10px;
+      .field{
+        font-size:20px;
+        text-align:left;
+        #user_username{
+          @include text_field();
+        }
+        #user_email{
+          @include text_field();
+
+        }
+        #user_password{
+          @include text_field();
+        }
+        #user_password_confirmation{
+          @include text_field();
+        }
+        #user_department{
+          height: 25px;
+          width:300px;
+          font-size: 15px;
+        }
+        #user_post{
+          @include text_field();
+        }
+        #user_contact{
+          @include text_field();
+        }
+      }
+      .actions{
+        .singup_button{
+          width:200px;
+          font-size: 0.7em;
+          background-color:#009900;
+          margin-bottom:5px;
+          border-radius: 20px;
+        }
+      }
+    }
+    .links{
+      margin-top:10px;
+      font-size:20px;
+      text-decoration: none;
+    }
+  }
+}
+
+.error_message{
+  list-style: none;
+  color:red;
+  font-size:15px;
+}
