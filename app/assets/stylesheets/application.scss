@@ -1,7 +1,6 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import "users/index";
-@import "users/header";
 @import "items/index";
 @import "items/new";
 @import "items/show";
@@ -10,6 +9,7 @@
 @import "users/new";
 @import "users/show";
 @import "users/edit";
+@import "header";
 @import "reset";
 
 

@@ -11,33 +11,46 @@ $none :none;
   &__user{
     height: 100px;
     width: 200px;
-    float:left;
     font-size:20px;
-    text-decoration: $none;
-  
-  .user {
-    margin-left:5px;
     float:left;
-  }
-  .name{
-    float:left;
-    margin-left:5px;
-  }
-  .none{
-    text-decoration: $none;
-    .edit{
-      color:white;
-      font-size:20px;
+    &__name{
+      float:left;
+      margin-left:5px;
+      color:black;
+      text-decoration: $none;
+      .user {
+        margin-left:5px;
+        float:left;
+      }
+      .name{
+        color:black;
+        margin-left:5px;
+      }
+    }
+    &__image{
       margin-left:10px;
+      .userimage{
+        margin-right: 10px;
+        width: 45px;
+        border-radius: 50%;
+        border: 1px solid #fafafa; 
+      }
+      .none{
+        text-decoration: $none;
+        .edit{
+          color:white;
+          font-size:25px;
+          margin-left:10px;
+          }
+        }
+      .logout{
+        color:black;
+        font-size:25px;
+        margin-left:10px;
+        }
+      }
     }
-  }
-  .logout{
-    color:orange;
-    font-size:20px;
-    margin-left:5px;
-
-    }
-  }
+  
   &__button{
    height: 100px;
    width: 210px;
