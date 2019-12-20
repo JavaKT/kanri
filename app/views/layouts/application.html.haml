@@ -17,8 +17,11 @@
           = current_user.username
         .header__user__image
           = link_to  user_path(current_user) ,class:"none" do
-            = image_tag current_user.image.url,class:"userimage"
-          = link_to edit_user_registration_path, class:"none" do
+            - if current_user.image.file.nil?
+              = image_tag "/images/unknown.png",class:"userimage"
+            - else
+              = image_tag current_user.image.url,class:"userimage"
+          = link_to "/regisrations/#{current_user.id}/edit", class:"none" do
             = icon "fa","user-edit",class:"edit"
           = link_to destroy_user_session_path,class:"none",method: :delete do
             = icon 'fa', "sign-out-alt" ,class:"logout"
