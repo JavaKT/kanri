@@ -26,6 +26,8 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
         department: 所属部署
+        start_day: 入社日
+        number: 内線番号
         username: 名前
     models:
       user: ユーザ
