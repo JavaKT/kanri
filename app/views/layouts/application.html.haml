@@ -32,10 +32,10 @@
         =link_to new_item_path ,class:"header__button__create--new" do
           商品登録へ
       .header__button__show
-        =link_to "/categories/1",class:"header__button__show--biyou" do
+        =link_to category_1_categories_path,class:"header__button__show--biyou" do
           = icon "fa","female"
-        =link_to "/categories/2",class:"header__button__show--fashion" do
+        =link_to category_2_categories_path,class:"header__button__show--fashion" do
           = icon "fa","tshirt"
-        =link_to "/categories/3",class:"header__button__show--living" do
+        =link_to category_3_categories_path,class:"header__button__show--living" do
           = icon "fab","resolving"
   = yield
