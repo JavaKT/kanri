@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root to: "regisrations#index"
   
   resources :regisrations, only: [:new,:create,:edit,:update]
-  resources :users, only:[:show]
+  resources :users, only:[:show] do
+    member do
+      get 'search_items'
+    end
+  end
   resources :categories ,only: [:show] do
     collection do
       get 'category_1'
