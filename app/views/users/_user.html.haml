@@ -2,7 +2,7 @@
   - if user.image.file.nil?
     = image_tag "/images/unknown.png",size: '300x300',class:"profimage"
   - else
-    = image_tag user.image.url,size: '300x300',class:"profimage"
+    = image_tag user.image.thumb.url,size: '300x300',class:"profimage"
 .show_user__sidebar__info
   %p.username
     = user.username
