@@ -26,7 +26,15 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
         department: 所属部署
+        start_day: 入社日
+        number: 内線番号
         username: 名前
+      item:
+        name: 商品名
+        price: 上代
+        budget: 下代
+        on_air: 放映日
+        category: 商品ジャンル
     models:
       user: ユーザ
   devise:

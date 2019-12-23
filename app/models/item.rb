@@ -8,6 +8,12 @@ class Item < ApplicationRecord
     "ファッション":2,
     "リビング":3,}
 
+  validates :name,presence: true,format: {with: /\A[ぁ-んァ-ン一-龥]/}
+  validates :price,:budget,presence: true,format:{with: /\A[0-9]+\z/}
+  validates :on_air,presence: true
+  validates :category,presence: {message: "を選択して下さい"}
+
+
   def self.search(search)
     if search 
       Item.where('name LIKE (?)', "%#{search}%")
@@ -15,5 +21,6 @@ class Item < ApplicationRecord
       Item.all
     end
   end
+
 
 end

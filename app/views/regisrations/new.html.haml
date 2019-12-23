@@ -31,21 +31,23 @@
         = f.select :department, User.departments.keys, {prompt: "---"}
         = render partial: 'shared/error_messages', locals: {user: @user, column: "department"}
       .field
+        = f.label "*入社日"
+        %br/
+        = f.date_field :start_day
+        = render partial: 'shared/error_messages', locals: {user: @user, column: "start_day"}
+      .field
+        = f.label "*内線番号"
+        %br/
+        = f.text_field :number
+        = render partial: 'shared/error_messages', locals: {user: @user, column: "number"}
+      .field
         = f.label "役職"
         %br/
         = f.text_field :post,placeholder: "MD,販売推進,営業など"
       .field
-        = f.label "入社日"
-        %br/
-        = f.date_field :start_day
-      .field
         = f.label "プロフィール画像"
         %br/
         = f.file_field :image
-      .field
-        = f.label "内線番号"
-        %br/
-        = f.text_field :number
       .field
         = f.label "連絡先"
         %br/

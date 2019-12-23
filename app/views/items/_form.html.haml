@@ -1,33 +1,44 @@
-.form__text
-  = form_with model: @item, local: true do |f|
-    %p
-      商品名
-      = f.text_field :name, size: :"45"
-    %p
-      上代
-      = f.text_field :price, size: :"45"
-    %p
-      下代
-      = f.text_field :bugdet, size: :"45"
-    %p
-      取扱色
-      = f.text_field :color, size: :"45"
-    %p
-      放映日
-      = f.date_field :on_air, size: :"50"
-    %p.image
-      商品画像：
-      = f.label "商品画像をアップロード"
-      = f.file_field :image
-    %p.video
-      放映内容：
-      = f.file_field :video
-    %p
-      ジャンル選択:
-      = f.select :category, Item.categories.keys, {prompt: "---"}
-    .form__text__submit  
-      %p
-        キャンコメなど：
-        = f.text_area :comment, rows: :"6",cols: :"50"
-      %p
-        = f.submit value:"登録する" ,class:"register"
+= form_with model: @item, id:"item_new", local: true do |f|
+  .field
+    = f.label "商品名"
+    %br/
+    = f.text_field :name, placeholder:"商品名を入力して下さい"
+    = render partial: 'shared/error_messages', locals: {user: @item, column: "name"}
+  .field
+    = f.label "上代"
+    %br/
+    = f.text_field :price, placeholder:"上代を入力して下さい"
+    = render partial: 'shared/error_messages', locals: {user: @item, column: "price"}
+  .field
+    = f.label "下代"
+    %br/
+    = f.text_field :budget, placeholder:"下代を入力して下さい"
+    = render partial: 'shared/error_messages', locals: {user: @item, column: "budget"}
+  .field
+    = f.label "取扱い色"
+    %br/
+    = f.text_field :color, placeholder:"ブラック・ホワイトなど"
+    = render partial: 'shared/error_messages', locals: {user: @item, column: "color"}
+  .field
+    = f.label "放映日"
+    %br/
+    = f.date_field :on_air
+    = render partial: 'shared/error_messages', locals: {user: @item, column: "on_air"}
+  .field
+    = f.label "商品画像"
+    %br/
+    = f.file_field :image
+  .field
+    = f.label "放映内容"
+    %br/
+    = f.file_field :video
+  .field
+    = f.label "ジャンル選択"
+    %br/
+    = f.select :category, Item.categories.keys, {prompt: "---"}
+    = render partial: 'shared/error_messages', locals: {user: @item, column: "category"}
+  .field
+    = f.label "キャンコメ"
+    = f.text_area :discription,placeholoder:"変更予定、未定な部分、プレビュー時の注意点などあれば追記して下さい" ,rows: :"6",cols: :"50"
+  .actions
+    = f.submit value:"登録する" ,class:"item_register"

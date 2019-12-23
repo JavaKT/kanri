@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_065250) do
     t.string "video"
     t.string "image"
     t.integer "price", null: false
-    t.integer "bugdet", null: false
+    t.integer "budget", null: false
     t.text "color", null: false
     t.datetime "on_air", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.text "discription"
