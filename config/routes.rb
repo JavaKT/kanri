@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       get 'category_1'
       get 'category_2'
       get 'category_3'
+      get 'search_1'
+      get 'search_2'
+      get 'search_3'
     end
   end
 resources :items do
