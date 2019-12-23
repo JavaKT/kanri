@@ -20,7 +20,7 @@
             - if current_user.image.file.nil?
               = image_tag "/images/unknown.png",class:"userimage"
             - else
-              = image_tag current_user.image.thumb.url,class:"userimage"
+              = image_tag current_user.image.url,class:"userimage"
           = link_to "/regisrations/#{current_user.id}/edit", class:"none" do
             = icon "fa","user-edit",class:"edit"
           = link_to destroy_user_session_path,class:"none",method: :delete do
