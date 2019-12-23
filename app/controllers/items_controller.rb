@@ -34,7 +34,11 @@ class ItemsController < ApplicationController
 
     def update
       @item.update(item_params)
-      redirect_to action: :show
+        if @item.update_attributes(item_params)
+        redirect_to item_path(@item)
+        else
+        render action: :edit
+        end
     end
 
     def destroy
