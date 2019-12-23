@@ -2,10 +2,10 @@
   - items.each do |item| 
     .items__search__result__info
       .items__search__result__info__image
-        = link_to item_path(item) do
-          %p.image
+        %p.image
+          = link_to item_path(item) do
             - if item.image.file.nil?
-              = link_to image_tag "/images/noimage.png", width:"200",height: "200" 
+              = image_tag "/images/noimage.png", width:"200",height: "200" 
             - else
               = image_tag item.image.thumb.url, alt: "商品画像です"
       .items__search__result__info__text

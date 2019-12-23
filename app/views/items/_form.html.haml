@@ -1,26 +1,26 @@
 = form_with model: @item, id:"item_new", local: true do |f|
   .field
-    = f.label "商品名"
+    = f.label "*商品名"
     %br/
     = f.text_field :name, placeholder:"商品名を入力して下さい"
     = render partial: 'shared/error_messages', locals: {user: @item, column: "name"}
   .field
-    = f.label "上代"
+    = f.label "*上代"
     %br/
     = f.text_field :price, placeholder:"上代を入力して下さい"
     = render partial: 'shared/error_messages', locals: {user: @item, column: "price"}
   .field
-    = f.label "下代"
+    = f.label "*下代"
     %br/
     = f.text_field :budget, placeholder:"下代を入力して下さい"
     = render partial: 'shared/error_messages', locals: {user: @item, column: "budget"}
   .field
-    = f.label "取扱い色"
+    = f.label "*取扱い色"
     %br/
     = f.text_field :color, placeholder:"ブラック・ホワイトなど"
     = render partial: 'shared/error_messages', locals: {user: @item, column: "color"}
   .field
-    = f.label "放映日"
+    = f.label "*放映日"
     %br/
     = f.date_field :on_air
     = render partial: 'shared/error_messages', locals: {user: @item, column: "on_air"}
@@ -33,7 +33,7 @@
     %br/
     = f.file_field :video
   .field
-    = f.label "ジャンル選択"
+    = f.label "*ジャンル選択"
     %br/
     = f.select :category, Item.categories.keys, {prompt: "---"}
     = render partial: 'shared/error_messages', locals: {user: @item, column: "category"}
