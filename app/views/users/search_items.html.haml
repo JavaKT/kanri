@@ -3,6 +3,6 @@
     = render partial:'user',locals: {user: @user}
   .show_user__main
     = form_with url:  search_items_user_path(@user), local: true ,method: :get, class: "items__search" do |f| 
-      = f.text_field :keyword ,placeholder:"#{@user.username}が担当した商品名を入力して下さい",id:"keyword"
+      = f.text_field :keyword ,placeholder:"#{@user.username}さんが担当した商品名を入力して下さい",id:"keyword"
       = f.submit '検索する'
       = render partial:'shared/items',locals: {items: @items}
