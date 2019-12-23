@@ -3,7 +3,7 @@
   .show__image
     %p.image
       - if @item.image.file.nil?
-        = linkt_to image_tag "/uploads/noimage.png", width:"220",height: "220" 
+        = link_to image_tag "/images/noimage.png", width:"220",height: "220" 
       - else
         = image_tag @item.image.thumb.url, alt: "商品画像です"
     .show__image__box
@@ -46,7 +46,7 @@
     【以下はプレビューになります。適宜確認して下さい】
     %p
     - if @item.video.file.nil?
-      = linkt_to image_tag "/uploads/novideo.jpg", width:"670",height: "350" 
+      = link_to image_tag "/images/novideo.jpg", width:"670",height: "350" 
     - else
       = video_tag @item.video_url.to_s, loop: true, controls: true, width: 650
    

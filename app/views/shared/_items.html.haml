@@ -5,7 +5,7 @@
         = link_to item_path(item) do
           %p.image
             - if item.image.file.nil?
-              = image_tag "/uploads/noimage.png", width:"200",height: "200" 
+              = link_to image_tag "/images/noimage.png", width:"200",height: "200" 
             - else
               = image_tag item.image.thumb.url, alt: "商品画像です"
       .items__search__result__info__text
