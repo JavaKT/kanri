@@ -1,9 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
-  def show
-    category = Category.find(params[:id])
-    @items = category.items
+  def category_1
+    @items = Item.where(catogory: 1)
   end
 end
 
