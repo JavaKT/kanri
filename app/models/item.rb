@@ -8,7 +8,7 @@ class Item < ApplicationRecord
     "ファッション":2,
     "リビング":3,}
 
-  validates :name,presence: true,format: {with: /\A[ぁ-んァ-ン一-龥]/}
+  validates :name,presence: true,format: {with: /\A[ぁ-んァ-ン一-龥a-zA-Z]/}
   validates :price,:budget,presence: true,format:{with: /\A[0-9]+\z/}
   validates :on_air,presence: true
   validates :category,presence: {message: "を選択して下さい"}
