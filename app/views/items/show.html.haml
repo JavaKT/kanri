@@ -9,7 +9,8 @@
     .show__image__box
     %p.name
       【担当者】
-      = @item.user.username
+      = link_to user_path(@item.user_id) do
+        = @item.user.username
     %p
       【ジャンル】
       = @item.category
