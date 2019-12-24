@@ -15,9 +15,9 @@ class ItemsController < ApplicationController
       @item = Item.new(item_params)
       @item.valid? 
         if @item.errors.messages.blank? && @item.errors.details.blank?
-            if @item.save
-              redirect_to root_path
-            else render :new
+          if @item.save
+            redirect_to root_path
+          else render :new
           end
         else
           render :new
@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
       else
         redirect_to item_path(@item)
       end
-    emd
+    end
 
     def destroy
       if @item.user_id == current_user.id
@@ -51,6 +51,7 @@ class ItemsController < ApplicationController
         redirect_to action: :index
       else
         redirect_to action: :index
+      end
     end
 
     def search
@@ -77,5 +78,6 @@ class ItemsController < ApplicationController
     def set_item
       @item = Item.find(params[:id])
     end
+
   end
 

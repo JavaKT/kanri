@@ -1,16 +1,16 @@
 class CommentsController < ApplicationController
-  before_action :set_item
 
   def create
-    @comment = Comment.create(comment_params)
-      if @comment.save
-        redirect_to comments_item_path(@item)
-      else
-      render template: "items/comment"
-      end
+    @item = Item.find(params[:id])
+    @comment = Comment.create(text: comment_params[:text], item_id: comment_params[:item_id], user_id: current_user.id)
+    respond_to do |format|
+      format.html { redirect_to comments_item_path(comment_params[:item_id])  }
+      format.json
+    end
   end
   
   def destroy
+    @item = Item.find(params[:item_id])
     @comment = Comment.find(params[:id])
     if @comment.user_id == current_user.id
       @comment.destroy
@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:text).merge(user_id: current_user.id, item_id: params[:item_id])
+    params.permit(:text, :item_id)
   end
 
   def set_item
