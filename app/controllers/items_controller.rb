@@ -54,6 +54,13 @@ class ItemsController < ApplicationController
       end
     end
 
+    def comments
+      @item = Item.find(params[:id])
+      @comment = Comment.new
+      @comments = @item.comments.includes(:user)
+    end
+
+
 
     private
 

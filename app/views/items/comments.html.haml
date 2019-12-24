@@ -41,15 +41,4 @@
       【キャンコメなど】
       %h4.comment
         = @item.discription
-  .show__video
-    【以下はプレビューになります。適宜確認して下さい】
-    %p
-    - if @item.video.file.nil?
-      = link_to image_tag "/images/novideo.jpg", width:"670",height: "350" 
-    - else
-      = video_tag @item.video_url.to_s, loop: true, controls: true, width: 650
-    = link_to  comments_item_path(@item) do
-      %button コメントする
-      
-   
-
+        = @comments
