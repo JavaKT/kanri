@@ -14,7 +14,7 @@
     }
     &__comments{
       overflow: scroll;
-      height: calc(100vh - 270px);
+      height: calc(100vh - 245px);
       background-color: #fafafa;
       padding:10px;
       .comment_box{
@@ -36,9 +36,20 @@
       }
     }
     &__comment{
-      height:70px;
-      bottom: 0; 
-      background-color: orange;
+      height:45px;
+      padding:8px;
+      padding-left:20px;
+      background-color: #2f3e51;
+      #comment_text{
+        height: 30px;
+        width:70%;
+      }
+      .comment_submit{
+        margin-bottom:15px;
+        margin-left:10px;
+        width:110px;
+        
+      }
     }
   }
 }
