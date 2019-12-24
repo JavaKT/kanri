@@ -1,0 +1,37 @@
+.show__image
+  %p.image
+    - if item.image.file.nil?
+      = link_to image_tag "/images/noimage.png", width:"220",height: "220" 
+    - else
+      = image_tag item.image.thumb.url, alt: "商品画像です"
+  .show__image__box
+  %p.name
+    【担当者】
+    = link_to user_path(item.user_id) do
+      = item.user.username
+  %p
+    【ジャンル】
+    = item.category
+  %p
+    【商品名】
+    = item.name
+  %p
+    【上代】
+    = converting_to_jpy(item.price) 
+  %p
+    【下代】
+    = converting_to_jpy(item.budget) 
+  %p
+    【取り扱い色】
+    = item.color
+  %p
+    【放映日】
+    = item.on_air.strftime("%Y年 %m月 %d日")
+  .show__image__edit
+    - if user_signed_in? && current_user.id == item.user_id
+      %h4
+        = link_to edit_item_path(item) do
+          =  icon "fa","edit",class:"edi"
+      %h4
+        = link_to item_path(item),method: :delete do
+          = icon "fa","trash-alt",class:"delete"
