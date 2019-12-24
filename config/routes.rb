@@ -26,6 +26,6 @@ Rails.application.routes.draw do
     member do
         get 'comments'
     end
-    resources :comments, only: [:new,:create,:index,:edit,:update,:destroy]
+    resources :comments, only: [:create,:destroy]
     end
 end

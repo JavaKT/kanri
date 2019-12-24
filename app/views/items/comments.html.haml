@@ -16,7 +16,11 @@
             .comment_text
               = comment.text
             .comment_date
-              = comment.created_at.strftime("%-m月%-d日 %-H時%-M分")
+              %h4
+                = link_to  item_comment_path(comment.item_id,comment.id),method: :delete do
+                  = icon "fa","trash-alt",class:"delete"
+                = comment.created_at.strftime("%-m月%-d日 %-H時%-M分")
+  
     .show__right_box__comment
       = form_with model: [@item, @comment], local: true do |f| 
         = f.text_area :text, placeholder: "コメントする", rows: "2" 
