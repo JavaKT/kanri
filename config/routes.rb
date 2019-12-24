@@ -19,9 +19,10 @@ Rails.application.routes.draw do
       get 'search_3'
     end
   end
-resources :items do
+  resources :items do
     collection do
-      get 'search'
+        get 'search'
+      end
+    resources :comments, only: [:new,:create,:index,:edit,:update,:destroy]
     end
-  end
 end
