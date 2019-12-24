@@ -33,17 +33,24 @@ class ItemsController < ApplicationController
     end
 
     def update
-      @item.update(item_params)
-      if @item.update_attributes(item_params)
-        redirect_to item_path(@item)
+      if @item.user_id == current_user.id
+        @item.update(item_params)
+        if @item.update_attributes(item_params)
+          redirect_to item_path(@item)
+        else
+        render :edit
+        end
       else
-      render :edit
+        redirect_to item_path(@item)
       end
-    end
+    emd
 
     def destroy
-      @item.destroy
-      redirect_to action: :index
+      if @item.user_id == current_user.id
+        @item.destroy
+        redirect_to action: :index
+      else
+        redirect_to action: :index
     end
 
     def search
