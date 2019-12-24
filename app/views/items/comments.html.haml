@@ -1,7 +1,23 @@
 .show
   = render partial:"item", locals: {item: @item}
-  .show__text
-    %p<
-      【キャンコメなど】
-      %h4.comment
-        = @item.discription
+  .show__right_box
+    .show__right_box__sp
+      %p<
+        【キャンコメなど】
+        %h1
+          = @item.discription
+    .show__right_box__comments
+      - if @comments   
+        - @comments.each do |comment| 
+          .comment_box
+            .comment_name
+              = link_to user_path(comment.user_id),class:"none" do
+                = comment.user.username 
+            .comment_text
+              = comment.text
+            .comment_date
+              = comment.created_at.strftime("%-m月%-d日 %-H時%-M分")
+    .show__right_box__comment
+      = form_with model: [@item, @comment], local: true do |f| 
+        = f.text_area :text, placeholder: "コメントする", rows: "2" 
+        = f.submit "SEND" 

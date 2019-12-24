@@ -1,14 +1,12 @@
 class CommentsController < ApplicationController
 
   def create
+    @item = Item.find(params[:item_id])
     comment = Comment.create(comment_params)
-    redirect_to "/items/#{comment.item.id}" 
+    redirect_to comments_item_path(@item)
   end
   
-  def index
-    @comment = Comment.new
-    @comments = @item.comments.includes(:user)
-  end
+
 
   private
   def comment_params

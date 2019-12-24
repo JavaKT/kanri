@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+.show{
+
+  &__right_box{
+    width:75%;
+    &__sp{
+    height: 100px;
+    font-size:14px;
+    padding:10px;
+    border-bottom: solid 1px #eee;
+    }
+    &__comments{
+      overflow: scroll;
+      height: calc(100vh - 270px);
+      background-color: #fafafa;
+      padding:10px;
+      .comment_box{
+        margin-top:5px;
+        height: 35px;
+        display:flex;
+        .comment_name{
+          .none{
+          text-decoration: none;
+          color: #2f3e51;
+          }
+        }
+        .comment_text{
+          padding-left:10px;
+        }
+        .comment_date{
+          margin: 0 0 0 auto;
+        }
+      }
+    }
+    &__comment{
+      height:70px;
+      bottom: 0; 
+      background-color: orange;
+    }
+  }
+}
+
+
