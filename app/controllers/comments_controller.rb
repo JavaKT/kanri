@@ -1,10 +1,8 @@
 class CommentsController < ApplicationController
 
   def create
-    @item = Item.find(params[:id])
     @comment = Comment.create(text: comment_params[:text], item_id: comment_params[:item_id], user_id: current_user.id)
     respond_to do |format|
-      format.html { redirect_to comments_item_path(comment_params[:item_id])  }
       format.json
     end
   end

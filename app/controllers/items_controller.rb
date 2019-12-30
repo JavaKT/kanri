@@ -63,6 +63,7 @@ class ItemsController < ApplicationController
     end
 
     def comments
+      @item = Item.find(params[:id])
       @comment = Comment.new
       @comments = @item.comments.includes(:user)
     end
@@ -72,7 +73,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, :video, :image, :category).merge(user_id: current_user.id)
+      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, :video, :image, :category).merge(user: cunrrent_user)
     end
  
     def set_item

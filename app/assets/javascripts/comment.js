@@ -1,23 +1,24 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
   function buildHTML(comment){
     var html = `<div class="comment_box">
                   <div class="comment_name">
-                    <a class="none" href="/users/${comment.user_id}>${comment.user_name}</a>
-                  </div>
+                    <a class="none" href="/users/${comment.user_id}">${comment.user_name}
+                  </a></div>
                   <div class="comment_text">
-                  ${comment.text}
+                    ${comment.text}
                   </div>
                   <div class="comment_date">
-                  ${comment.time}
+                    ${comment.time}
                   </div>
                 </div>`
     return html;
   }
 
+
   $('#new_comment').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $('#new_comment').attr('action')
+    var url = $(this).attr('action')
     $.ajax({
       url: url,
       type: "POST",
