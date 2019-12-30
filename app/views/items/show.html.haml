@@ -13,7 +13,7 @@
     - else
       = video_tag @item.video_url.to_s, loop: true, controls: true, width: 650
     = link_to  comments_item_path(@item) do
-      %button コメントする
+      %button.comment コメントする
       
    
 

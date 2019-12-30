@@ -44,10 +44,17 @@
   }
 
   &__video{
-    width: 50%;
     background-color:#00CC66;
     color:white;
     font-size:20px;
+    padding:10px;
+    .comment{
+      height: 40px;
+      width:150px;
+      font-size:20px;
+      margin-top:10px;
+      margin-left:10px;
+    }
 
   }
 }
