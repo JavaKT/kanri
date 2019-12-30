@@ -12,7 +12,9 @@ class ItemsController < ApplicationController
     end
   
     def create
-      @item = Item.new(item_params)
+      item_params[:image].each do |a|
+      @item = Item.new(item_params.clone.merge({image: a}))
+      end
       @item.valid? 
         if @item.errors.messages.blank? && @item.errors.details.blank?
           if @item.save
@@ -74,7 +76,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, :video, :image, :category).merge(user: current_user)
+      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, :video, {image:[]}, :category).merge(user: current_user)
     end
  
     def set_item

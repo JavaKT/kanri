@@ -27,7 +27,8 @@
   .field
     = f.label "商品画像"
     %br/
-    = f.file_field :image
+    = f.file_field :image, multiple: true
+    
   .field
     = f.label "放映内容"
     %br/
