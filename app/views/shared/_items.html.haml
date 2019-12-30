@@ -4,10 +4,10 @@
       .items__search__result__info__image
         = link_to item_path(item) do
           %p.image
-            - if item.image.file.nil?
+            - if item.item_images.images.file.nil?
               = image_tag "/images/noimage.png", width:"200",height: "200" 
             - else
-              = image_tag item.image.thumb.url, alt: "商品画像です"
+              = image_tag item.images.thumb.url, alt: "商品画像です"
       .items__search__result__info__text
         %p.name
           【担当者】

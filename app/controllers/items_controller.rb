@@ -3,28 +3,29 @@ class ItemsController < ApplicationController
     before_action :set_item  ,except: [:index, :new, :create, :search]
   
     def index
-      @items = Item.includes(:user)
+      @items = Item.includes(:user,:item_image)
     
     end
   
     def new
       @item = Item.new
+      @item.images.build
     end
   
     def create
-      item_params[:image].each do |a|
-      @item = Item.new(item_params.clone.merge({image: a}))
-      end
-      @item.valid? 
-        if @item.errors.messages.blank? && @item.errors.details.blank?
-          if @item.save
-            redirect_to root_path
-          else render :new
+      @item = @item.images.build(item_params)
+      respond_to do |format|
+        if @item.save
+          params[:image][:image].each do |a|
+            @item.image.create(image: image, item_id: @item.id)
           end
-        else
-          render :new
-      end
-    end
+         format.html { redirect_to root_path}
+       else
+          @item.images.build
+         format.html { render action: 'new' }
+       end
+     end
+   end
 
     def show
       
@@ -76,7 +77,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, :video, {image:[]}, :category).merge(user: current_user)
+      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, :video, :category,images_attributes: [:image]).merge(user: current_user)
     end
  
     def set_item
