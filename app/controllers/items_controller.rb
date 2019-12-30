@@ -63,6 +63,7 @@ class ItemsController < ApplicationController
     end
 
     def comments
+      gon.current_user_id = current_user.id
       @item = Item.find(params[:id])
       @comment = Comment.new
       @comments = @item.comments.includes(:user)

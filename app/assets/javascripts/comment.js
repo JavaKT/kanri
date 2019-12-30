@@ -1,9 +1,9 @@
 $(document).on('turbolinks:load',function(){
 
   function buildHTML(comment){
-    var c_u_id = gon.current_user_id
+    const c_u_id = gon.current_user_id;
     var drop = ""
-    { c_u_id == comment.user_id? 
+    {c_u_id == comment.user_id? 
       drop =`<a class="none" rel="nofollow" data-method="delete" href="/items/${comment.item_id}/comments/${comment.id}"><i class="fa fa-trash-alt delete_comment"></i></a>`
       :drop =``};
 
@@ -40,6 +40,7 @@ $(document).on('turbolinks:load',function(){
     $('.show__right_box__comments').append(html);
     $('.text_box').val('');
     $('.comment_submit').prop('disabled', false);
+    $(".show__right_box__comments").animate({scrollTop:$(".show__right_box__comments")[0].scrollHeight});
   })
   .fail(function(){
     alert('コメントが正しく送信されませんでした');

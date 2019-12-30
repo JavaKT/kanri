@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
 
   def create
-    gon.current_user_id = current_user.id
     @comment = Comment.create(comment_params)
     respond_to do|format|
       format.json

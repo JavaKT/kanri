@@ -3,10 +3,10 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title 放映商品管理
-    = include_gon
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = include_gon
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
    
 
