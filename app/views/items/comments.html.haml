@@ -1,0 +1,29 @@
+.show
+  = render partial:"item", locals: {item: @item}
+  .show__right_box
+    .show__right_box__sp
+      %p<
+        【キャンコメなど】
+        %h1
+          = @item.discription
+    .show__right_box__comments
+      - if @comments   
+        - @comments.each do |comment| 
+          .comment_box
+            .comment_name
+              = link_to user_path(comment.user_id),class:"none" do
+                = comment.user.username 
+            .comment_text
+              = comment.text
+            .comment_date
+              - if comment.user_id == current_user.id
+                = link_to  "/items/#{comment.item_id}/comments/#{comment.id}",method: :delete, class:"none" do
+                  = icon "fa","trash-alt",class:"delete_comment"
+                = comment.created_at.strftime("%-m月%-d日 %-H時%-M分")
+              - else
+                = comment.created_at.strftime("%-m月%-d日 %-H時%-M分")
+              
+    .show__right_box__comment
+      = form_with model: [@item, @comment], id:"new_comment",local: true do |f| 
+        = f.text_area :text, placeholder: "コメントする", rows: "2" ,class:"text_box"
+        = f.submit "コメントする" ,class:"comment_submit"

@@ -15,9 +15,9 @@ class ItemsController < ApplicationController
       @item = Item.new(item_params)
       @item.valid? 
         if @item.errors.messages.blank? && @item.errors.details.blank?
-            if @item.save
-              redirect_to root_path
-            else render :new
+          if @item.save
+            redirect_to root_path
+          else render :new
           end
         else
           render :new
@@ -33,17 +33,25 @@ class ItemsController < ApplicationController
     end
 
     def update
-      @item.update(item_params)
-      if @item.update_attributes(item_params)
-        redirect_to item_path(@item)
+      if @item.user_id == current_user.id
+        @item.update(item_params)
+        if @item.update_attributes(item_params)
+          redirect_to item_path(@item)
+        else
+        render :edit
+        end
       else
-      render :edit
+        redirect_to item_path(@item)
       end
     end
 
     def destroy
-      @item.destroy
-      redirect_to action: :index
+      if @item.user_id == current_user.id
+        @item.destroy
+        redirect_to action: :index
+      else
+        redirect_to action: :index
+      end
     end
 
     def search
@@ -54,15 +62,24 @@ class ItemsController < ApplicationController
       end
     end
 
+    def comments
+      gon.current_user_id = current_user.id
+      @item = Item.find(params[:id])
+      @comment = Comment.new
+      @comments = @item.comments.includes(:user)
+    end
+
+
 
     private
 
     def item_params
-      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, :video, :image, :category).merge(user_id: current_user.id)
+      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, :video, :image, :category).merge(user: current_user)
     end
  
     def set_item
       @item = Item.find(params[:id])
     end
+
   end
 
