@@ -13,14 +13,14 @@ class ItemsController < ApplicationController
   
     def create
       @item = Item.new(item_params)
-      @item.valid? 
-        if @item.errors.messages.blank? && @item.errors.details.blank?
-          if @item.save
-            redirect_to root_path
-          else render :new
-          end
+      respond_to do |format|
+        if Item.create_item_by(item_params)
+          format.html { redirect_to root, notice: 'Photo was successfully created.' }
+          format.json { render :show, status: :created, location: @item }
         else
-          render :new
+          format.html { render :new }
+          format.json { render json: @item.errors, status: :unprocessable_entity }
+        end
       end
     end
 
@@ -74,7 +74,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, :video, :image, :category).merge(user: current_user)
+      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, :video, :category ,{image: []}).merge(user: current_user)
     end
  
     def set_item

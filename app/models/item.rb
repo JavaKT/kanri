@@ -23,5 +23,17 @@ class Item < ApplicationRecord
     end
   end
 
+  def self.create_item_by(item_params)
+      return false if item_params[:image].nil?
+      Item.transaction do 
+        item_params[:image].each do |photo|
+          new_item = Item.new(image: photo)
+          return false unless new_item.save!
+        end
+      end
+    
+      true
+    end
+
 
 end
