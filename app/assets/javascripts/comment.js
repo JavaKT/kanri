@@ -1,5 +1,12 @@
 $(document).on('turbolinks:load',function(){
+
   function buildHTML(comment){
+    var c_u_id = gon.current_user_id
+    var drop = ""
+    { c_u_id == comment.user_id? 
+      drop =`<a class="none" rel="nofollow" data-method="delete" href="/items/${comment.item_id}/comments/${comment.id}"><i class="fa fa-trash-alt delete_comment"></i></a>`
+      :drop =``};
+
     var html = `<div class="comment_box">
                   <div class="comment_name">
                     <a class="none" href="/users/${comment.user_id}">${comment.user_name}
@@ -8,6 +15,7 @@ $(document).on('turbolinks:load',function(){
                     ${comment.text}
                   </div>
                   <div class="comment_date">
+                    ${drop}
                     ${comment.time}
                   </div>
                 </div>`
@@ -38,3 +46,5 @@ $(document).on('turbolinks:load',function(){
   })
 })
 })
+
+
