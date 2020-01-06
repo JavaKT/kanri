@@ -27,8 +27,10 @@
   .field
     = f.label "商品画像"
     %br/
-    = f.fields_for :images do |image|
+    = f.fields_for :images,@item.images.build do |image|
       = image.file_field :image
+      
+
   .field
     = f.label "放映内容"
     %br/
