@@ -1,7 +1,9 @@
 .images
-  .images__image
-    - @images.each do |image| 
-      - if image.image.file.nil?
-        = image_tag "/images/noimage.png", width:"300",height: "300" ,class:"image_detail"
-      - else
-        = image_tag image.image.url, width:"300",height: "300",alt: "商品画像です",class:"image_detail"
+  = link_to edit_image_path(@item) do
+    画像を編集する
+    .images__image
+      - @images.each do |image| 
+        - if image.image.file.nil?
+          = image_tag "/images/noimage.png", width:"300",height: "300" ,class:"image_detail"
+        - else
+          = image_tag image.image.url, width:"300",height: "300",alt: "商品画像です",class:"image_detail"
