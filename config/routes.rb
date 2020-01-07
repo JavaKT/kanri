@@ -29,6 +29,11 @@ Rails.application.routes.draw do
     resources :comments, only: [:create,:destroy]
     end
   
-  resources :images , only:[:show,:edit,:update] 
+  resources :images do
+    member do
+      get  'new_image'
+    end
+  end
+  
   
 end

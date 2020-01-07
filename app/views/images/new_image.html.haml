@@ -1,0 +1,5 @@
+.item_image_new
+  = form_with model: @image, id:"item_new", local: true do |f|
+    = f.file_field :image
+    = f.hidden_field :item_id , value:@item.id
+    = f.submit value:"登録する" ,class:"item_register"
