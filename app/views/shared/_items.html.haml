@@ -8,7 +8,10 @@
             = image_tag "/images/noimage.png", width:"200",height: "200" 
           - else
             - item.images.first(1).each do |image|
-              = image_tag image.image.thumb.url, alt: "商品画像です"
+              - if image.image.nil?
+                = image_tag "/images/noimage.png", width:"200",height: "200" 
+              - else
+                = image_tag image.image.thumb.url, alt: "商品画像です"
       .items__search__result__info__text
         %p.name
           【担当者】

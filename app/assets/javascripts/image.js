@@ -62,6 +62,16 @@ $(document).on('turbolinks:load',function(){
   reader.readAsDataURL(file);
   })
 
+  $('.add_image').on('change', function(e){
+    var file = e.target.files[0];
+    var reader = new FileReader();
+    reader.onload = (function(e){
+      var ar = new Uint8Array(reader.result);  
+      $(".preview").append($("<img  class = photo_img >").attr("src", e.target.result));
+  })
+  reader.readAsDataURL(file);
+  })
+
   $('.remove_btn1').on('click', function(){
     $('#image1').val('');
     $('.image_box1').html('');

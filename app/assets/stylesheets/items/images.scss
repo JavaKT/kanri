@@ -3,15 +3,39 @@
 }
 .images{
   padding-top:100px;
+  background-color: #fafafa;
+  height: 100vh;
   &__image{
     margin:10px;
-    .image_detail{
-      margin-left:5px;
+    .item_image_detail{
       border:solid 1px black;
+      cursor: pointer;
+    }
+    .nonimage{
+      border:solid 1px black;
+      cursor: pointer;
+      }
     }
   }
-}
+
+
 
 .item_image_new{
   padding-top:100px;
+  background-color: #fafafa;
+  height: 100vh;
+  display: flex;
+  &__upload{
+    padding:10px;
+  }
+  &__preview{
+    .preview{
+      .photo_img{
+    border:solid 1px black;
+    width:300px;
+    height:300px;
+      }
+  }
+}
+
 }

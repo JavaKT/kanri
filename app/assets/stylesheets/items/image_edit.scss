@@ -4,5 +4,27 @@
 
 .image_edit{
   padding-top:100px;
-
+  background-color: #fafafa;
+  height: 100vh;
+  &__box{
+    display: flex;
+    padding:10px;
+    &__show{  
+      .item_image_show{
+        width:350px;
+        height: 350px;
+        border-radius: 15px;
+        border:solid 3px black; 
+      }
+    }
+    &__edit{
+    padding:20px;
+    .image_register{
+      width:80px;
+    }
+    .delete{
+      margin-top:10px;
+    }
+    }
+}
 }
