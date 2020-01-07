@@ -6,7 +6,6 @@ $(document).on('turbolinks:load',function(){
     reader.onload = (function(e){
       var ar = new Uint8Array(reader.result);  
       $(".image_box1").append($("<img  class = photo_img >").attr("src", e.target.result));
-      $(".file_field1").prop("disabled", true);
     })
   reader.readAsDataURL(file);
 
@@ -45,7 +44,6 @@ $(document).on('turbolinks:load',function(){
   $('.remove_btn1').on('click', function(){
     $('#image1').val('');
     $('.image_box1').html('');
-    $(".file_field1").prop("disabled", false);
   })
 
   $('.remove_btn2').on('click', function(){
