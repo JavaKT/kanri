@@ -5,6 +5,10 @@
   padding-top:100px;
   &__image{
     margin:10px;
+    .image_detail{
+      margin-left:5px;
+      border:solid 1px black;
+    }
   }
 
 }

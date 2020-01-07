@@ -27,12 +27,35 @@
   .field_image
     = f.label "商品画像"
     %br/
-    = f.fields_for :images do |i|
-      = i.file_field :image, name: "item[images_attributes][0][image]", multipart: true, class: "file_field1", id: "image"
-      = i.file_field :image, name: "item[images_attributes][1][image]", multipart: true, class: "file_field1", id: "image"
-      = i.file_field :image, name: "item[images_attributes][2][image]", multipart: true, class: "file_field1", id: "image"
-  .field
-  .field
+    .field_images
+      .field_upload
+        = f.fields_for :images do |i|
+          = i.label :image, for: "image1", id: "photo"  do
+            = i.file_field :image, name: "item[images_attributes][0][image]", multipart: true, class: "file_field1", id:"image1"
+            選択
+        .remove_btn1
+          削除
+      .field_upload
+        = f.fields_for :images do |i|
+          = i.label :image, for: "image2", id: "photo"  do
+            = i.file_field :image, name: "item[images_attributes][1][image]", multipart: true, class: "file_field2", id:"image2"
+            選択
+        .remove_btn2
+          削除
+      .field_upload
+        = f.fields_for :images do |i|
+          = i.label :image, for: "image3", id: "photo"  do
+            = i.file_field :image, name: "item[images_attributes][2][image]", multipart: true, class: "file_field3", id:"image3"
+            選択
+        .remove_btn3
+          削除
+      .field_upload
+        = f.fields_for :images do |i|
+          = i.label :image, for: "image4", id: "photo"  do
+            = i.file_field :image, name: "item[images_attributes][3][image]", multipart: true, class: "file_field4", id:"image4"
+            選択
+        .remove_btn4
+          削除
   .field
     = f.label "放映内容"
     %br/
@@ -47,3 +70,4 @@
     = f.text_area :discription,placeholoder:"変更予定、未定な部分、プレビュー時の注意点などあれば追記して下さい" ,rows: :"6",cols: :"50"
   .actions
     = f.submit value:"登録する" ,class:"item_register"
+
