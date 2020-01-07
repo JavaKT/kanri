@@ -27,8 +27,12 @@
   .field_image
     = f.label "商品画像"
     %br/
-    = f.fields_for :images,@item.images.build do |image|
-      = image.file_field :image
+    = f.fields_for :images do |i|
+      = i.file_field :image, name: "item[images_attributes][0][image]", multipart: true, class: "file_field1", id: "image"
+      = i.file_field :image, name: "item[images_attributes][1][image]", multipart: true, class: "file_field1", id: "image"
+      = i.file_field :image, name: "item[images_attributes][2][image]", multipart: true, class: "file_field1", id: "image"
+  .field
+  .field
   .field
     = f.label "放映内容"
     %br/

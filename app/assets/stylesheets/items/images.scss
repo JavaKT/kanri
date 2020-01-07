@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+.images{
+  padding-top:100px;
+  &__image{
+    margin:10px;
+  }
+
+}

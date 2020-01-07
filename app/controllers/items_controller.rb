@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
   
     def create
       @item = Item.new(item_params)
-      @item.images.build
       @item.valid? 
         if @item.errors.messages.blank? && @item.errors.details.blank?
           if @item.save

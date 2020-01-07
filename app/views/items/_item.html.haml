@@ -1,6 +1,6 @@
 .show__image
   %p.image
-    - item.images.each do |image|
+    - item.images.first(1).each do |image|
       - if image.image.file.nil?
         = image_tag "/images/noimage.png", width:"200",height: "200" 
       - else

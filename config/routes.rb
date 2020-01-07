@@ -28,4 +28,7 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:create,:destroy]
     end
+  
+  resources :images , only:[:show] 
+  
 end
