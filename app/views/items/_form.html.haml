@@ -28,27 +28,42 @@
     = f.label "商品画像"
     %br/
     .field_images
-      .field_upload
-        = f.fields_for :images, @item.images.build do |i|
+      = f.fields_for :images, @item.images.build do |i|
+        .field_upload
           = i.label :image, for: "image1", id: "photo"  do
             = i.file_field :image, name: "item[images_attributes][0][image]", multipart: true,class: "file_field1", id:"image1"
-            選択
+            画像①
           .remove_btn1
             削除
+        .field_upload
           = i.label :image, for: "image2", id: "photo"  do
             = i.file_field :image, name: "item[images_attributes][1][image]", multipart: true, class: "file_field2", id:"image2"
-            選択
+            画像②
           .remove_btn2
             削除
+        .field_upload
           = i.label :image, for: "image3", id: "photo"  do
             = i.file_field :image, name: "item[images_attributes][2]][image]", multipart: true, class: "file_field3", id:"image3"
-            選択
+            画像③
           .remove_btn3
             削除
+        .field_upload
           = i.label :image, for: "image4", id: "photo"  do
             = i.file_field :image, name: "item[images_attributes][3][image]", multipart: true, class: "file_field4", id:"image4"
-            選択
+            画像④
           .remove_btn4
+            削除
+        .field_upload
+          = i.label :image, for: "image5", id: "photo"  do
+            = i.file_field :image, name: "item[images_attributes][4][image]", multipart: true, class: "file_field5", id:"image5"
+            画像⑤
+          .remove_btn5
+            削除
+        .field_upload
+          = i.label :image, for: "image6", id: "photo"  do
+            = i.file_field :image, name: "item[images_attributes][5][image]", multipart: true, class: "file_field6", id:"image6"
+            画像⑥
+          .remove_btn6
             削除
   .field
     = f.label "放映内容"
@@ -60,7 +75,8 @@
     = f.select :category, Item.categories.keys, {prompt: "---"}
     = render partial: 'shared/error_messages', locals: {user: @item, column: "category"}
   .field
-    = f.label "キャンコメ"
+    = f.label "キャンコメなど"
+    %br/
     = f.text_area :discription,placeholoder:"変更予定、未定な部分、プレビュー時の注意点などあれば追記して下さい" ,rows: :"6",cols: :"50"
   .actions
     = f.submit value:"登録する" ,class:"item_register"

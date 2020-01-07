@@ -6,6 +6,22 @@
   font-size: $fSize;
 }
 
+@mixin remove_btn($bgc: red, $color:#fff,$text:center,
+                  $fsize:15px,$curosr: pointer){
+  background-color:$bgc;
+  color:$color;
+  text-align: $text;
+  font-size:$fsize;
+  cursor: $curosr;
+                  }
+@mixin photo_img($w:200px,$h:200px,$border:solid 1px black){
+  width:$w;
+  height:$h;
+  border:$border;
+}
+
+
+
 //================================= SIGNUP VIEW=================================//
 
 
@@ -55,19 +71,26 @@
         height: 25px;
         width:300px;
         font-size:15px;
-      }
+        }
       #item_discription{
         font-size:15px;
-        }
       }
+      }
+
+
       .field_image{
         .field_images{
           display: flex;
           .field_upload{
+            margin-left:5px;
           #photo{
-            border:solid 1px blue;
+            padding:3px;
+            background-color: #253141;
+            color: white;
+            font-size:15px;
+            cursor: pointer;
             #image1{
-            display:none;
+              display:none;
             }
             #image2{
               display:none;
@@ -78,18 +101,31 @@
             #image4{
               display:none;
             }
+            #image5{
+              display:none;
+            }
+            #image6{
+              display:none;
+            }
           }
+          
         .remove_btn1{
-          border:solid 1px red;
+          @include remove_btn();
           }
         .remove_btn2{
-          border:solid 1px red;
+          @include remove_btn();
           }
         .remove_btn3{
-          border:solid 1px red;
+          @include remove_btn();
           }
         .remove_btn4{
-            border:solid 1px red;
+          @include remove_btn();
+          }
+        .remove_btn5{
+          @include remove_btn();
+          }
+        .remove_btn6{
+          @include remove_btn();
           }
         }
       }
@@ -113,31 +149,39 @@
       display: flex;
       flex-wrap: wrap;
       .image_box1{
+        margin-left:5px;
         .photo_img{
-        width:200px;
-        height:200px;
-        border: solid 1px black
+        @include photo_img();
         }
       }
       .image_box2{
+        margin-left:5px;
         .photo_img{
-        width:200px;
-        height:200px;
-        border: solid 1px black
+          @include photo_img();
         }
       }
       .image_box3{
+        margin-left:5px;
         .photo_img{
-        width:200px;
-        height:200px;
-        border: solid 1px black
+          @include photo_img();
         }
       }
       .image_box4{
+        margin-left:5px;
         .photo_img{
-        width:200px;
-        height:200px;
-        border: solid 1px black
+          @include photo_img();
+        }
+      }
+      .image_box5{
+        margin-left:5px;
+        .photo_img{
+          @include photo_img();
+        }
+      }
+      .image_box6{
+        margin-left:5px;
+        .photo_img{
+          @include photo_img();
         }
       }
     }
