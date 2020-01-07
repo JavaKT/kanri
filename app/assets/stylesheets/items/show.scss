@@ -7,18 +7,25 @@
   padding-top:100px;
   height: 100vh;
   &__image{
-    width: 25%;
     background-color:#00CC66;
 
     .image{
       padding:10px;
+    }
+    .name{
+      .none{
+        text-decoration: underline;
+        color:black;
+
+        
+      }
     }
     &__box{
       margin-top:20px;
 
     }
     &__edit{
-      margin-top:20px;
+      margin-top:10px;
       padding:10px;
       .edi{
         float:left;
@@ -36,7 +43,7 @@
       }
   }
   &__text{
-    width: 25%;
+    width: 35%;
     .comment{
       margin-left:5px; 
     }
@@ -48,6 +55,8 @@
     color:white;
     font-size:20px;
     padding:10px;
+    .none{
+      text-decoration: none;
     .comment{
       height: 40px;
       width:150px;
@@ -55,6 +64,15 @@
       margin-top:10px;
       margin-left:10px;
     }
+  }
+    .image_button{
+      height: 40px;
+      width:150px;
+      font-size:20px;
+      margin-top:10px;
+      margin-left:10px;
+    }
+  
 
   }
 }

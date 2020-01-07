@@ -12,11 +12,10 @@
       = link_to image_tag "/images/novideo.jpg", width:"670",height: "350" 
     - else
       = video_tag @item.video_url.to_s, loop: true, controls: true, width: 650
-    = link_to  comments_item_path(@item) do
+    = link_to  comments_item_path(@item) ,class:"none"do
       %button.comment コメントする
-    
     = link_to  image_path(@item) do
-      %button  商品画像一覧
+      %button.image_button 商品画像一覧
      
       
    
