@@ -1,8 +1,6 @@
 class ImagesController < ApplicationController
   before_action :authenticate_user!
 
-
-
   def new_image
     @item = Item.find(params[:id])
     @image = Image.new
@@ -11,7 +9,7 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     if @image.save
-      redirect_to root_path
+      redirect_to items_path
     else
       render :new_image
     end
@@ -50,7 +48,7 @@ class ImagesController < ApplicationController
   end
 
   def image_params
-    params.require(:image).permit([:item_id,:image])
+    params.require(:image).permit(:item_id,:image)
   end
 
 end
