@@ -5,7 +5,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.references :user, null: false ,foreign_key: true
       t.string :name, null: false
       t.string :video 
-      t.string :image
       t.integer :price, null: false
       t.integer :budget, null: false
       t.text :color, null: false

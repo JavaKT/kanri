@@ -1,5 +1,13 @@
 .form
-  %h3.text ↓以下のフォームから登録して下さい↓ *は必須です
-  担当者:
-  = current_user.username
-  = render partial: "form"
+  .right_box
+    %h3.text ↓以下のフォームから登録して下さい↓ *は必須です
+    担当者:
+    = current_user.username
+    = render partial: "form"
+  .left_box
+    %h3.text 商品画像プレビュー
+    .all_image_box
+      .image_box1
+      .image_box2
+      .image_box3
+      .image_box4

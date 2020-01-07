@@ -4,11 +4,11 @@ class ItemsController < ApplicationController
   
     def index
       @items = Item.includes(:user)
-    
     end
   
     def new
       @item = Item.new
+      @item.images.build
     end
   
     def create
@@ -74,7 +74,8 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, :video, :image, :category).merge(user: current_user)
+      params.require(:item).permit(:name, :price, :budget, :color, :on_air, :discription, 
+                :video, :category,images_attributes: [:id,:image]).merge(user: current_user)
     end
  
     def set_item

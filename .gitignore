@@ -20,6 +20,8 @@
 /public/uploads/item/video
 /public/uploads/tmp
 /public/uploads/user
+/public/uploads/image
+
 
 /node_modules
 /yarn-error.log

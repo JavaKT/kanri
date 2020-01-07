@@ -1,0 +1,6 @@
+.image_edit
+  = form_with model: @image, method: :patch, local: true do |f|
+    = f.file_field :image
+    = f.submit value:"更新する" ,class:"item_register"
+  = link_to image_path(@image) ,method: :delete do
+    画像を削除する
