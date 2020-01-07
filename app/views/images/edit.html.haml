@@ -2,10 +2,11 @@
   .image_edit__box
     .image_edit__box__show
       = image_tag @image.image.url , class:"item_image_show"
-    .image_edit__box__edit
-      = form_with model: @image, method: :patch, local: true do |f|
-        = f.file_field :image
-        = f.submit value:"更新する" ,class:"image_register"
-      = link_to image_path(@image) ,method: :delete do
-        %button.delete
-          この画像を削除する
+    - if @image.item.user_id == current_user.id
+      .image_edit__box__edit
+        = form_with model: @image, method: :patch, local: true do |f|
+          = f.file_field :image
+          = f.submit value:"更新する" ,class:"image_register"
+        = link_to image_path(@image) ,method: :delete do
+          %button.delete
+            この画像を削除する
