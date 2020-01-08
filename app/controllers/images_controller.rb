@@ -9,7 +9,7 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     if @image.save
-      redirect_to items_path
+      redirect_to image_path(@image.item_id)
     else
       render :new_image
     end

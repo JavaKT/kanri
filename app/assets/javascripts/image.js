@@ -156,8 +156,9 @@ $(document).on('turbolinks:load',function(){
   $('.add_image').on('change', function(){
     $(".image_register").attr("disabled",false);
     $(".add_image").attr("disabled",true);
-
   })
 
-
+  $('.image_register').on('click',function(){
+    $(".add_image").attr("disabled",false);
+  })
 })

@@ -1,7 +1,7 @@
 .show__image
   %p.image
     - if item.images.empty?
-      = image_tag "/images/noimage.png", width:"200",height: "200" 
+      = image_tag "/images/noimage.png", width:"300",height: "300" 
     - else
       - item.images.first(1).each do |image|
         = image_tag image.image.url,width:"300",height: "300" , alt: "商品画像です"
