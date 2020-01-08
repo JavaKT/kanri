@@ -3,7 +3,9 @@
     = form_with model: @image, id:"item_new", local: true do |f|
       = f.file_field :image,class:"add_image"
       = f.hidden_field :item_id , value:@item.id 
-      = f.submit value:"登録する" ,class:"item_register"
+      .remove_btn
+        =  icon "fa","trash",class:"delete_image"
+      = f.submit value:"登録する" ,class:"image_register"
   .item_image_new__preview
     %h3.text 商品画像プレビュー
     .preview

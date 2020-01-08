@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
       @item.valid? 
         if @item.errors.messages.blank? && @item.errors.details.blank?
           if @item.save
-            redirect_to root_path
+            redirect_to items_path
           else render :new
           end
         else

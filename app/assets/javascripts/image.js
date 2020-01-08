@@ -110,4 +110,26 @@ $(document).on('turbolinks:load',function(){
     $('.file_field6').prop("disabled", false);
   })
 
-})  
+  $('.remove_btn').on('click', function(){
+    $('.add_image').val('');
+    $('.preview').html('');
+    $('.add_image').prop("disabled", false);
+  })
+
+  $('.image_register').on('mouseenter',function(){
+    fileCheck = $(".add_image").val().length;
+      if(fileCheck == 0){
+        $(".image_register").attr("disabled",true);
+        alert("商品画像を選択して下さい")
+      }else{
+        $(".image_register").attr("disabled",false);
+      }
+  })
+  $('.add_image').on('change', function(){
+    $(".image_register").attr("disabled",false);
+    $(".add_image").attr("disabled",true);
+
+  })
+
+
+})

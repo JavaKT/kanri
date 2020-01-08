@@ -3,12 +3,10 @@
 }
 .show_user{
   width:100vw;
-  height: 100vh;
   display:flex;
   padding-top:100px;
   &__sidebar{
     width:300px;
-    height: 100%;
     background-color: #2f3e51;
     color:white;
     &__image{
