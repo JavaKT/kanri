@@ -4,18 +4,15 @@ $(document).on('turbolinks:load',function(){
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = (function(e){
-      var ar = new Uint8Array(reader.result);  
       $(".image_box1").append($("<img  class = photo_img >").attr("src", e.target.result));
     })
   reader.readAsDataURL(file);
-
   })
 
   $('.file_field2').on('change', function(e){
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = (function(e){
-      var ar = new Uint8Array(reader.result);  
       $(".image_box2").append($("<img  class = photo_img >").attr("src", e.target.result));
   })
   reader.readAsDataURL(file);
@@ -25,7 +22,6 @@ $(document).on('turbolinks:load',function(){
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = (function(e){
-      var ar = new Uint8Array(reader.result);  
       $(".image_box3").append($("<img  class = photo_img >").attr("src", e.target.result));
   })
   reader.readAsDataURL(file);
@@ -35,7 +31,6 @@ $(document).on('turbolinks:load',function(){
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = (function(e){
-      var ar = new Uint8Array(reader.result);  
       $(".image_box4").append($("<img  class = photo_img >").attr("src", e.target.result));
   })
   reader.readAsDataURL(file);
@@ -46,7 +41,6 @@ $(document).on('turbolinks:load',function(){
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = (function(e){
-      var ar = new Uint8Array(reader.result);  
       $(".image_box5").append($("<img  class = photo_img >").attr("src", e.target.result));
   })
   reader.readAsDataURL(file);
@@ -56,7 +50,6 @@ $(document).on('turbolinks:load',function(){
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = (function(e){
-      var ar = new Uint8Array(reader.result);  
       $(".image_box6").append($("<img  class = photo_img >").attr("src", e.target.result));
   })
   reader.readAsDataURL(file);
@@ -66,7 +59,6 @@ $(document).on('turbolinks:load',function(){
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = (function(e){
-      var ar = new Uint8Array(reader.result);  
       $(".preview").append($("<img  class = photo_img >").attr("src", e.target.result));
   })
   reader.readAsDataURL(file);
