@@ -7,7 +7,10 @@ $(document).on('turbolinks:load',function(){
       $(".image_box1").append($("<img  class = photo_img > <h1 class = image1>画像①</h1>").attr("src", e.target.result));
     })
   reader.readAsDataURL(file);
-  $('.file_field1').prop("disabled", true);
+  $('.file_field1').prop("disabled", true)
+  $('#photo1').css({
+    "color": "#fff",
+  "cursor" : "no-drop"});
   })
 
   $('.file_field2').on('change', function(e){
@@ -17,7 +20,13 @@ $(document).on('turbolinks:load',function(){
       $(".image_box2").append($("<img  class = photo_img ><h1 class = image2>画像②</h1>").attr("src", e.target.result));
   })
   reader.readAsDataURL(file);
+  $('.file_field2').prop("disabled", true)
+  $('#photo2').css({
+    "color": "#fff",
+    "cursor" : "no-drop"});
   })
+
+
 
   $('.file_field3').on('change', function(e){
     var file = e.target.files[0];
@@ -26,6 +35,10 @@ $(document).on('turbolinks:load',function(){
       $(".image_box3").append($("<img  class = photo_img ><h1 class = image3>画像③</h1>").attr("src", e.target.result));
   })
   reader.readAsDataURL(file);
+  $('.file_field3').prop("disabled", true)
+  $('#photo3').css({
+    "color": "#fff",
+    "cursor" : "no-drop"});
   })
 
   $('.file_field4').on('change', function(e){
@@ -35,6 +48,10 @@ $(document).on('turbolinks:load',function(){
       $(".image_box4").append($("<img  class = photo_img ><h1 class = image4>画像④</h1>").attr("src", e.target.result));
   })
   reader.readAsDataURL(file);
+  $('.file_field4').prop("disabled", true)
+  $('#photo4').css({
+    "color": "#fff",
+    "cursor" : "no-drop"});
   })
 
 
@@ -45,6 +62,10 @@ $(document).on('turbolinks:load',function(){
       $(".image_box5").append($("<img  class = photo_img ><h1 class = image5>画像⑤</h1>").attr("src", e.target.result));
   })
   reader.readAsDataURL(file);
+  $('.file_field5').prop("disabled", true)
+  $('#photo5').css({
+    "color": "#fff",
+    "cursor" : "no-drop"});
   })
 
   $('.file_field6').on('change', function(e){
@@ -54,6 +75,10 @@ $(document).on('turbolinks:load',function(){
       $(".image_box6").append($("<img  class = photo_img ><h1 class = image6>画像⑥</h1>").attr("src", e.target.result));
   })
   reader.readAsDataURL(file);
+  $('.file_field6').prop("disabled", true)
+  $('#photo6').css({
+    "color": "#fff",
+    "cursor" : "no-drop"});
   })
 
   $('.add_image').on('change', function(e){
@@ -78,6 +103,9 @@ $(document).on('turbolinks:load',function(){
     $('#image1').val('');
     $('.image_box1').html('');
     $('.file_field1').prop("disabled", false);
+    $('#photo1').css({
+      "color": "#253141",
+    "cursor" : "copy"});
   })
 
   $('.remove_btn2').on('click', function(){

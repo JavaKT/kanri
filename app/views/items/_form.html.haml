@@ -30,41 +30,47 @@
     .field_images
       = f.fields_for :images, @item.images.build do |i|
         .field_upload
-          = i.label :image, for: "image1", id: "photo"  do
+          = i.label :image, for: "image1", id: "photo1"  do
             = i.file_field :image, name: "item[images_attributes][0][image]", multipart: true,class: "file_field1", id:"image1"
-            画像①
+            =  icon "fa","upload",class:"upload_image"
+            ①
           .remove_btn1
-            削除
+            =  icon "fa","trash",class:"delete_image"
         .field_upload
-          = i.label :image, for: "image2", id: "photo"  do
+          = i.label :image, for: "image2", id: "photo2"  do
             = i.file_field :image, name: "item[images_attributes][1][image]", multipart: true, class: "file_field2", id:"image2"
-            画像②
+            =  icon "fa","upload",class:"upload_image"
+            ②
           .remove_btn2
-            削除
+            =  icon "fa","trash",class:"delete_image"
         .field_upload
-          = i.label :image, for: "image3", id: "photo"  do
+          = i.label :image, for: "image3", id: "photo3"  do
             = i.file_field :image, name: "item[images_attributes][2]][image]", multipart: true, class: "file_field3", id:"image3"
-            画像③
+            =  icon "fa","upload",class:"upload_image"
+            ③
           .remove_btn3
-            削除
+            =  icon "fa","trash",class:"delete_image"
         .field_upload
-          = i.label :image, for: "image4", id: "photo"  do
+          = i.label :image, for: "image4", id: "photo4"  do
             = i.file_field :image, name: "item[images_attributes][3][image]", multipart: true, class: "file_field4", id:"image4"
-            画像④
+            =  icon "fa","upload",class:"upload_image"
+            ④
           .remove_btn4
-            削除
+            =  icon "fa","trash",class:"delete_image"
         .field_upload
-          = i.label :image, for: "image5", id: "photo"  do
+          = i.label :image, for: "image5", id: "photo5"  do
             = i.file_field :image, name: "item[images_attributes][4][image]", multipart: true, class: "file_field5", id:"image5"
-            画像⑤
+            =  icon "fa","upload",class:"upload_image"
+            ⑤
           .remove_btn5
-            削除
+            =  icon "fa","trash",class:"delete_image"
         .field_upload
-          = i.label :image, for: "image6", id: "photo"  do
+          = i.label :image, for: "image6", id: "photo6"  do
             = i.file_field :image, name: "item[images_attributes][5][image]", multipart: true, class: "file_field6", id:"image6"
-            画像⑥
+            =  icon "fa","upload",class:"upload_image"
+            ⑥
           .remove_btn6
-            削除
+            =  icon "fa","trash",class:"delete_image"
   .field
     = f.label "放映内容"
     %br/

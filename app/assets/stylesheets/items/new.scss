@@ -6,14 +6,16 @@
   font-size: $fSize;
 }
 
-@mixin remove_btn($bgc: red, $color:#fff,$text:center,
-                  $fsize:15px,$curosr: pointer){
-  background-color:$bgc;
+@mixin remove_btn($border: solid 1px, $color:red,$text:center,
+                  $fsize:15px,$curosr: pointer,$radius:15px){
   color:$color;
   text-align: $text;
   font-size:$fsize;
   cursor: $curosr;
-                  }
+  border:$border;
+  border-radius: $radius;
+}
+
 @mixin photo_img($w:200px,$h:200px,$border:solid 1px black){
   width:$w;
   height:$h;
@@ -31,6 +33,12 @@
   position:$r;
 }
 
+@mixin photo_upload($fsize:18px,$curosr: copy,$color:#253141){
+  font-size:$fsize;
+  cursor: $curosr;
+  color:$color;
+
+}
 
 //================================= SIGNUP VIEW=================================//
 
@@ -84,7 +92,7 @@
         }
       #item_discription{
         font-size:15px;
-      }
+        }
       }
 
 
@@ -93,27 +101,38 @@
           display: flex;
           .field_upload{
             margin-left:5px;
-          #photo{
-            padding:3px;
-            background-color: #253141;
-            color: white;
-            font-size:15px;
-            cursor: pointer;
+          #photo1{
+            @include photo_upload();
             #image1{
               display:none;
             }
+          }
+          #photo2{
+            @include photo_upload();
             #image2{
               display:none;
             }
+          }
+          #photo3{
+            @include photo_upload();
             #image3{
               display:none;
             }
+          }
+          #photo4{
+            @include photo_upload();
             #image4{
               display:none;
             }
+          }
+          #photo5{
+            @include photo_upload();
             #image5{
               display:none;
             }
+          }
+          #photo6{
+            @include photo_upload();
             #image6{
               display:none;
             }
@@ -140,6 +159,7 @@
         }
       }
     }
+
   .actions{
     .item_register{
     font-size: 20px;
@@ -210,7 +230,7 @@
         }
         .image6{
           @include photo_no();
-          }
+        }
       }
     }
   }
