@@ -25,7 +25,7 @@
     = f.date_field :on_air
     = render partial: 'shared/error_messages', locals: {user: @item, column: "on_air"}
   .field_image
-    = f.label "商品画像"
+    = f.label "商品画像 最大6枚"
     %br/
     .field_images
       = f.fields_for :images, @item.images.build do |i|
