@@ -5,7 +5,7 @@
         = link_to  new_image_image_path(@item) do
           = image_tag "/images/uploadimg.jpg", width:"250",height: "250" ,class:"nonimage"
       - else
-        - if @item.images.count > 7
+        - if @item.images.count > 5
           - @item.images.each do |image|
             = link_to edit_image_path(image) do
               = image_tag image.image.thumb.url, alt: "商品画像です",width:"250",height: "250",class: "item_image_detail"
