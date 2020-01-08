@@ -5,7 +5,7 @@
     = f.text_field :name, placeholder:"商品名を入力して下さい"
     = render partial: 'shared/error_messages', locals: {user: @item, column: "name"}
   .field
-    = f.label "*上代"
+    = f.label  "*上代"
     %br/
     = f.text_field :price, placeholder:"上代を入力して下さい"
     = render partial: 'shared/error_messages', locals: {user: @item, column: "price"}
