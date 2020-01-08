@@ -1,9 +1,21 @@
 .images
   .images__image
-    - if @item.images.empty?
-      = link_to  new_image_image_path(@item) do
-        = image_tag "/images/uploadimg.jpg", width:"250",height: "250" ,class:"nonimage"
+    - if @item.user.id == current_user.id
+      - if @item.images.empty?
+        = link_to  new_image_image_path(@item) do
+          = image_tag "/images/uploadimg.jpg", width:"250",height: "250" ,class:"nonimage"
+      - else
+        - if @item.images.count > 7
+          - @item.images.each do |image|
+            = link_to edit_image_path(image) do
+              = image_tag image.image.thumb.url, alt: "商品画像です",width:"250",height: "250",class: "item_image_detail"
+        - else
+          = link_to  new_image_image_path(@item) do
+            = image_tag "/images/uploadimg.jpg", width:"100",height: "100" ,class:"nonimage"
+          - @item.images.each do |image|
+            = link_to edit_image_path(image) do
+              = image_tag image.image.thumb.url, alt: "商品画像です",width:"250",height: "250",class: "item_image_detail"
+          
     - else
       - @item.images.each do |image|
-        = link_to edit_image_path(image) do
-          = image_tag image.image.thumb.url, alt: "商品画像です",width:"250",height: "250",class: "item_image_detail"
+        = image_tag image.image.thumb.url, alt: "商品画像です",width:"250",height: "250",class: "item_image_detail"

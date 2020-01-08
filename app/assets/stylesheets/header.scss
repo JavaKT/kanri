@@ -8,6 +8,7 @@ $none :none;
   border-bottom: solid 1px #eee;
   background-color:#C0C0C0;
   position:fixed;
+  z-index: 1;
   &__user{
     height: 100px;
     width: 200px;
