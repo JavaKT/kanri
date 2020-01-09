@@ -105,37 +105,52 @@ $(document).on('turbolinks:load',function(){
     $('.file_field1').prop("disabled", false);
     $('#photo1').css({
       "color": "#253141",
-    "cursor" : "copy"});
+      "cursor" : "copy"});
   })
 
   $('.remove_btn2').on('click', function(){
     $('#image2').val('');
     $('.image_box2').html('');
     $('.file_field2').prop("disabled", false);
+    $('#photo2').css({
+      "color": "#253141",
+      "cursor" : "copy"});
   })
 
   $('.remove_btn3').on('click', function(){
     $('#image3').val('');
     $('.image_box3').html('');
     $('.file_field3').prop("disabled", false);
+    $('#photo3').css({
+      "color": "#253141",
+      "cursor" : "copy"});
   })
 
   $('.remove_btn4').on('click', function(){
     $('#image4').val('');
     $('.image_box4').html('');
     $('.file_field4').prop("disabled", false);
+    $('#photo4').css({
+      "color": "#253141",
+      "cursor" : "copy"});
   })
 
   $('.remove_btn5').on('click', function(){
     $('#image4').val('');
     $('.image_box5').html('');
     $('.file_field5').prop("disabled", false);
+    $('#photo5').css({
+      "color": "#253141",
+      "cursor" : "copy"});
   })
 
   $('.remove_btn6').on('click', function(){
     $('#image4').val('');
     $('.image_box6').html('');
     $('.file_field6').prop("disabled", false);
+    $('#photo5').css({
+      "color": "#253141",
+      "cursor" : "copy"});
   })
 
   $('.remove_btn').on('click', function(){
