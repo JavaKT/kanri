@@ -6,8 +6,10 @@
   display:flex;
   padding-top:100px;
   height: 100vh;
+  width: 100vw;
   &__image{
     background-color:#00CC66;
+    width:25vw;
 
     .image{
       padding:10px;
@@ -17,7 +19,6 @@
         text-decoration: underline;
         color:black;
 
-        
       }
     }
     &__box{
