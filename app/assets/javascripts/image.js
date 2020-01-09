@@ -148,7 +148,7 @@ $(document).on('turbolinks:load',function(){
     $('#image4').val('');
     $('.image_box6').html('');
     $('.file_field6').prop("disabled", false);
-    $('#photo5').css({
+    $('#photo6').css({
       "color": "#253141",
       "cursor" : "copy"});
   })
