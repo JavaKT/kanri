@@ -9,7 +9,7 @@
   width: 100vw;
   &__image{
     background-color:#00CC66;
-    width:25vw;
+    width:28vw;
 
     .image{
       padding:10px;
@@ -44,7 +44,7 @@
       }
   }
   &__text{
-    width: 35%;
+    width: 25vw;
     .comment{
       margin-left:5px; 
     }
@@ -56,6 +56,7 @@
     color:white;
     font-size:20px;
     padding:10px;
+    width:55vw;
     .none{
       text-decoration: none;
     .comment{

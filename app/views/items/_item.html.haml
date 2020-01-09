@@ -4,7 +4,7 @@
       = image_tag "/images/noimage.png", width:"300",height: "300" 
     - else
       - item.images.first(1).each do |image|
-        = image_tag image.image.url,width:"300",height: "300" , alt: "商品画像です"
+        = image_tag image.image.url,width:"250",height: "250" , alt: "商品画像です"
   %p.name
     【担当者】
     = link_to user_path(item.user_id), class:"none" do
