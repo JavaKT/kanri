@@ -5,7 +5,7 @@ describe User do
     it "名前を入力してください" do
       user = build(:user, username: "")
       user.valid?
-      expect(user.errors[:username]).to include("を入力して下さい")
+      expect(user.errors[:username]).to include("を入力してください", "は不正な値です")
     end
   end
 end
