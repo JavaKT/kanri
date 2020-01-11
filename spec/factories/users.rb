@@ -7,7 +7,7 @@ FactoryBot.define do
     password_confirmation {"00000000"}
     department            {1}
     start_day             {"2019-03-31"}
-    number                {"0000"}
+    number                {1111}
 
   end
 end
