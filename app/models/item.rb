@@ -15,7 +15,7 @@ class Item < ApplicationRecord
   validates :price,:budget,presence: true,format:{with: /\A[0-9]+\z/}
   validates :on_air,presence: true
   validates :category,presence: {message: "を選択して下さい"}
-
+  
 
   def self.search(search)
     if search 
