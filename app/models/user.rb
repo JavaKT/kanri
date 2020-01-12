@@ -17,7 +17,6 @@ class User < ApplicationRecord
             }
 
   has_many :items
-  has_many :comments
 
   validates :username, presence: true,format: {with: /\A[ぁ-んァ-ン一-龥]/}
   validates :department,:start_day,presence: {message:"を選択して下さい"}
