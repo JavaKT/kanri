@@ -11,7 +11,7 @@ describe RegisrationsController do
         params: params
       }
 
-    it "count up item " do
+    it "count up user " do
       expect{ subject }.to change(User, :count).by(1)
       end
     it 'redirects to root_path' do
