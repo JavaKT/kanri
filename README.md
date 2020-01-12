@@ -1,13 +1,13 @@
-# genre_itemsテーブル
 
-|Column|Type|Options|
-|------|----|-------|
-|item_id|references|null: false, foreign_key: true|
-|genre_id|references|null: false, foreign_key:true|
+# 放映商品管理アプリケーション
+### アプリURL  http://18.177.102.50/
 
-### Association
-- belongs_to :group
-- belongs_to :user
+##制作背景
+##工夫したところ
+##特徴
+・テスト
+・サービス機能関連
+・DB設計
 
 # usersテーブル
 |Column|Type|Options|
