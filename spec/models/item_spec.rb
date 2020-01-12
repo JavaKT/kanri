@@ -14,7 +14,7 @@ describe Item do
       expect(item.errors[:name]).to include("を入力してください")
     end
 
-    it "商品名をは不正な値です" do
+    it "商品名は不正な値です" do
       item = build(:item, name:"--")
       item.valid?
       expect(item.errors[:name]).to include("は不正な値です")
