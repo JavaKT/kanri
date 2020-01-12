@@ -6,10 +6,10 @@ describe RegisrationsController do
     let(:user) { create(:user) }
     let(:params) { { user: attributes_for(:user) } }
 
-    subject{
-      post :create,
-      params: params
-    }
+      subject{
+        post :create,
+        params: params
+      }
 
       it "count up item " do
         expect{ subject }.to change(User, :count).by(1)
