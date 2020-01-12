@@ -23,8 +23,4 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:text).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
-  def set_item
-    @item = Item.find(params[:id])
-  end
-
 end
