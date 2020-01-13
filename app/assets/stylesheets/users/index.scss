@@ -6,8 +6,13 @@
   padding-top:100px;
   width: 100vw;
   height: 100vh;
-  background-image: url(/images/warehouse.jpeg);
-  background-size: contain;
+  .body_video{
+    height: -webkit-fill-available;
+    min-width:-webkit-fill-available;
+    object-fit: fill;
+    opacity: 0.9;
+    filter: brightness(75%);
+    }
   &__box{
     width: 400px;
     height: 300px;
