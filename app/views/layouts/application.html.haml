@@ -28,6 +28,10 @@
             = icon "fa","user-edit",class:"edit"
           = link_to destroy_user_session_path,class:"none",method: :delete do
             = icon 'fa', "sign-out-alt" ,class:"logout"
+    - else
+      = link_to  new_user_session_path, class:"new_user_session" do
+        = icon "fa","sign-in-alt",class:"login_icon"
+        Log in
     .header__button
       .header__button__create
         =link_to items_path ,class:"header__button__create--show" do

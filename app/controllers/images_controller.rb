@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user! ,except: [:show]
 
   def new_image
     @item = Item.find(params[:id])

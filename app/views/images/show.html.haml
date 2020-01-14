@@ -1,6 +1,6 @@
 .images
   .images__image
-    - if @item.user.id == current_user.id
+    - if user_signed_in? && @item.user.id == current_user.id
       - if @item.images.empty?
         = link_to  new_image_image_path(@item) do
           = image_tag "/images/uploadimg.jpg", width:"250",height: "250" ,class:"nonimage"

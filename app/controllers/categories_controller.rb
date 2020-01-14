@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_user!
 
   def category_1
     @items = Item.where(category: 1)
