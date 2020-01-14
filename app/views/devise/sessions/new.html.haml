@@ -18,5 +18,12 @@
           = f.label "記憶させますか？"
       .actions
         = f.submit "ログインする" ,class:"login_button"
+      .test_account
+        %h1
+        ↓テストアカウント↓
+        %h1
+        メールアドレス: test@gmail.com
+        %h1
+        パスワード: testaccount
     .links
       = render "devise/shared/links"
