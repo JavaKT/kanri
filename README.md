@@ -66,7 +66,7 @@
 - サーバサイド
   - Ruby, Ruby on Rails
 - インフラ
-  - AWSの EC2,S3
+  - AWS (EC2,S3,IAM,Route53)
 
 
 ## DB設計
