@@ -1,5 +1,5 @@
 class RegisrationsController < ApplicationController
-  before_action :authenticate_user!,except: [:index]
+  before_action :authenticate_user!,except: [:index,:new,:create]
   before_action :set_user, only: [:edit, :update]
 
   def index
